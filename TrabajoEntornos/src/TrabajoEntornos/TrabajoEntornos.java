@@ -1,3 +1,5 @@
+package TrabajoEntornos;
+
 import java.awt.EventQueue;
 
 import java.util.Scanner;
@@ -37,7 +39,7 @@ import java.awt.Graphics;
  */
 
 
-public class Entornos extends JPanel {
+public class TrabajoEntornos extends JPanel {
 
 	private JFrame frmValoracion;
 	private JTable table;
@@ -57,7 +59,7 @@ public class Entornos extends JPanel {
 	private JTextField textField_7;
 	private JTextField textField_8;
 
-	public Entornos() {
+	public TrabajoEntornos() {
 
 		initialize();
 
@@ -70,7 +72,7 @@ public class Entornos extends JPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Entornos window = new Entornos();
+					TrabajoEntornos window = new TrabajoEntornos();
 					window.frmValoracion.setVisible(true);
 //					window.frmValoracion.setContentPane(window);
 				} catch (Exception e) {
