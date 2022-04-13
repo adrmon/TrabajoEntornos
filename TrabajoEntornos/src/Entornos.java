@@ -53,12 +53,12 @@ public class Entornos {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 536, 462);
+		frame.setBounds(100, 100, 611, 515);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		Scanner tec = new Scanner(System.in);
 		table = new JTable();
-		table.setBounds(96, 67, 366, 160);
+		table.setBounds(96, 67, 380, 160);
 		
 		table.setModel(new DefaultTableModel(
 			new Object[][] {

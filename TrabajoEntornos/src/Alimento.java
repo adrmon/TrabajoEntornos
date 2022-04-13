@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * <h2>Clase Alimento</h2> Esta clase almacena los distintos valores
  * nutricionales de un alimento por cada 100g de dicho alimento.
  *
- * @author Agustín Albert Laporta
+ * @author Agustï¿½n Albert Laporta
  * @version 1.0
  *
  */
@@ -81,9 +81,15 @@ public class Alimento {
 			double azucar,double proteinas, double sal, double calorias) {
 		this.nombre=nombre;
 		this.grasas=grasas;
-		this.grasas_saturadas=grasas_saturadas;
+		if(grasas_saturadas<grasas) {
+			this.grasas_saturadas=grasas_saturadas;
+		}
+		else System.out.println("Las grasas saturadas no pueden ser mayores que las grasas");
 		this.hidratos=hidratos;
-		this.azucar=azucar;
+		if (azucar<hidratos) {
+			this.azucar=azucar;
+		}
+		else System.out.println("El azucar no pude ser mayor que los hidratos");
 		this.proteinas=proteinas;
 		this.sal=sal;
 		this.calorias=calorias;
@@ -164,13 +170,13 @@ public class Alimento {
 
 		// Cantidad de grasa total consumida
 		double grasa = 0;
-		// Cantidad de calorías consumidas en total
+		// Cantidad de calorï¿½as consumidas en total
 		double calorias = 0;
-		// Valor límite del cálculo, si la cantidad de grasas totales superan este
+		// Valor lï¿½mite del cï¿½lculo, si la cantidad de grasas totales superan este
 		// valor, se considera una dieta malsana
 		double limite_ingesta_malsana = 0.3 * calorias;
 
-		// Obtención de los valores totales consumidos a lo alrgo del día
+		// Obtenciï¿½n de los valores totales consumidos a lo alrgo del dï¿½a
 		for (int i = 0; i < alimentos_consumidos.size(); i++) {
 			grasa += alimentos_consumidos.get(i).getGrasas();
 			calorias += alimentos_consumidos.get(i).getCalorias();
@@ -178,9 +184,9 @@ public class Alimento {
 		}
 
 		if (limite_ingesta_malsana > grasa) {
-			System.out.println("Ingesta calórica en valores normales");
+			System.out.println("Ingesta calï¿½rica en valores normales");
 		} else
-			System.out.println("Ingesta calórica malsana");
+			System.out.println("Ingesta calï¿½rica malsana");
 
 	}
 
@@ -195,19 +201,19 @@ public class Alimento {
 
 		// Cantidad de azucar total consumido
 		double azucar = 0;
-		// Cantidad de calorías consumidas en total
+		// Cantidad de calorï¿½as consumidas en total
 		double calorias = 0;
-		// Valor límite del cálculo, si la cantidad de grasas totales superan este
+		// Valor lï¿½mite del cï¿½lculo, si la cantidad de grasas totales superan este
 		// valor, se considera una dieta malsana
 		double limite_ingesta_azucar = 0.1 * calorias;
 		/*
-		 * Valor límite del cálculo, si la cantidad de grasas totales superan este
+		 * Valor lï¿½mite del cï¿½lculo, si la cantidad de grasas totales superan este
 		 * valor, se considera una dieta equilibrada si es inferior se considera una
 		 * dieta saludable
 		 */
 		double consumo_recomendado_azucar = 0.05 * calorias;
 
-		// Obtención de los valores totales consumidos a lo alrgo del día
+		// Obtenciï¿½n de los valores totales consumidos a lo alrgo del dï¿½a
 		for (int i = 0; i < alimentos_consumidos.size(); i++) {
 			azucar += alimentos_consumidos.get(i).getAzucar();
 			calorias += alimentos_consumidos.get(i).getCalorias();
@@ -215,11 +221,11 @@ public class Alimento {
 		}
 
 		if (azucar < consumo_recomendado_azucar) {
-			System.out.println("Consumo de azucar menor al 5% de la ingesta calórica total");
+			System.out.println("Consumo de azucar menor al 5% de la ingesta calï¿½rica total");
 		} else if (azucar > consumo_recomendado_azucar && azucar < limite_ingesta_azucar) {
-			System.out.println("Consumo de azucar menor al 10% de la ingesta calórica total");
+			System.out.println("Consumo de azucar menor al 10% de la ingesta calï¿½rica total");
 		} else
-			System.out.println("Consumo de azucar superior al 10% de la ingesta calçorica total");
+			System.out.println("Consumo de azucar superior al 10% de la ingesta calï¿½orica total");
 	}
 
 	/**
@@ -232,7 +238,7 @@ public class Alimento {
 		// Cantidad total de sal consumida
 		double sal = 0;
 
-		// Obtención de los valores totales consumidos a lo alrgo del día
+		// Obtenciï¿½n de los valores totales consumidos a lo alrgo del dï¿½a
 		for (int i = 0; i < alimentos_consumidos.size(); i++) {
 			sal += alimentos_consumidos.get(i).getSal();
 
@@ -241,8 +247,26 @@ public class Alimento {
 		if (sal < 5) {
 			System.out.println("Consumo de sal inferior a 5g diarios");
 		} else {
-			System.out.println("Consumo elevado de sal, riesgo de enfermedades cardiopáticas e hipertension");
+			System.out.println("Consumo elevado de sal, riesgo de enfermedades cardiopï¿½ticas e hipertension");
 		}
+	}
+	
+	//Metodo para calcular total de nutrientes en funcion de la cantidad total de gramos del alimento
+	
+	/**
+	 *
+	 * @param gramos Cantidad de gramos totales del alimento
+	 *                             
+	 *
+	 */
+	void calcularCantidadNutrientesTotales(double gramos) {
+		this.grasas=(this.grasas*gramos)/100;
+		this.grasas_saturadas=(this.grasas_saturadas*gramos)/100;
+		this.hidratos=(this.hidratos*gramos)/100;
+		this.azucar=(this.azucar*gramos)/100;
+		this.proteinas=(this.proteinas*gramos)/100;
+		this.sal=(this.sal*gramos)/100;
+		this.calorias=(this.calorias*gramos)/100;
 	}
 
 	@Override
@@ -250,5 +274,7 @@ public class Alimento {
 		return "Alimento [grasas=" + grasas + ", grasas_saturadas=" + grasas_saturadas + ", hidratos=" + hidratos
 				+ ", azucar=" + azucar + ", proteinas=" + proteinas + ", sal=" + sal + ", calorias=" + calorias + "]";
 	}
+	
+	
 
 }
