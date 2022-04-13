@@ -76,6 +76,18 @@ public class Alimento {
 	 *
 	 */
 	protected double calorias;
+	
+	public Alimento(String nombre, double grasas, double grasas_saturadas,double hidratos, 
+			double azucar,double proteinas, double sal, double calorias) {
+		this.nombre=nombre;
+		this.grasas=grasas;
+		this.grasas_saturadas=grasas_saturadas;
+		this.hidratos=hidratos;
+		this.azucar=azucar;
+		this.proteinas=proteinas;
+		this.sal=sal;
+		this.calorias=calorias;
+	}
 
 	public String getNombre() {
 		return nombre;
