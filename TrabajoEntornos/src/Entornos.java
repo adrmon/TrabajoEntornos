@@ -1,4 +1,5 @@
 import java.awt.EventQueue;
+import java.awt.Graphics;
 import java.util.Scanner;
 
 import javax.swing.JFrame;
@@ -9,11 +10,13 @@ import javax.swing.JLabel;
 import javax.swing.JCheckBox;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class Entornos {
+public class Entornos extends JPanel{
 
 	private JFrame frame;
 	private JTable table;
@@ -34,6 +37,7 @@ public class Entornos {
 				try {
 					Entornos window = new Entornos();
 					window.frame.setVisible(true);
+//					window.frame.setContentPane(window);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -128,5 +132,16 @@ public class Entornos {
 		textField.setBounds(474, 83, 114, 21);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
+	}
+	
+	@Override
+	public void paint(Graphics g) {
+
+		ImageIcon imagen = new ImageIcon(getClass().getResource("/imagenes/comida.jpg"));
+
+		g.drawImage(imagen.getImage(), 0, 0, getWidth(), getHeight(), this);
+
+		setOpaque(false);
+		super.paint(g);
 	}
 }
