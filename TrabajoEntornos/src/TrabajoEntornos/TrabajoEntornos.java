@@ -1,7 +1,7 @@
 package TrabajoEntornos;
 
 import java.awt.EventQueue;
-
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.swing.JFrame;
@@ -29,7 +29,6 @@ import javax.swing.WindowConstants;
 import java.awt.Font;
 import java.awt.Graphics;
 
-
 /**
  * <h2>Interfaz</h2>
  *
@@ -38,9 +37,12 @@ import java.awt.Graphics;
  *
  */
 
-
 public class TrabajoEntornos extends JPanel {
 
+	//LINEA CREADA PARA IMPORTAR EL ARRAY LIST DE LA CLASE LISTA
+	private static Lista nuevaLista = new Lista();
+	//
+	
 	private JFrame frmValoracion;
 	private JTable table;
 	private JCheckBox chckbxNewCheckBox_1;
@@ -69,6 +71,11 @@ public class TrabajoEntornos extends JPanel {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		//ARRAY LIST CREADO
+		ArrayList<Alimento> alimentos = nuevaLista.getAlimentos();
+		// LOS DATOS SON CORRECTOS
+		// System.out.println(alimentos);
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -80,7 +87,6 @@ public class TrabajoEntornos extends JPanel {
 				}
 			}
 		});
-
 	}
 
 	/**
@@ -103,17 +109,18 @@ public class TrabajoEntornos extends JPanel {
 		table.setBorder(new LineBorder(new Color(255, 200, 0), 3, true));
 		table.setRowHeight(33);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		table.setBounds(66, 41, 641, 330);
+		table.setBounds(66, 41, 696, 330);
 
-		table.setModel(new DefaultTableModel(
-				new Object[][] { { "Nombre", "Calorias", "Hidratos", "Sal", "Azucares", "Proteinas" },
-						{ null, null, null, null, null, null },
-						{ null, null, null, null, null, null }, { null, null, null, null, null, null },
-						{ null, null, null, null, null, null }, { null, null, null, null, null, null },
-						{ null, null, null, null, null, null }, { null, null, null, null, null, null },
-						{ null, null, null, null, null, null }, { null, null, null, null, null, null }, },
-				new String[] { "Nombre", "New column", "New column", "New column", "New column", "New column" }) {
-			boolean[] columnEditables = new boolean[] { false, true, true, true, true, true };
+		table.setModel(new DefaultTableModel(new Object[][] {
+				{ "Nombre", "Grasas", "G Saturadas", "Hidratos", "Azucares", "Proteinas", "Sal", "Calorias" },
+				{ null, null, null, null, null, null, null, null }, { null, null, null, null, null, null, null, null },
+				{ null, null, null, null, null, null, null, null }, { null, null, null, null, null, null, null, null },
+				{ null, null, null, null, null, null, null, null }, { null, null, null, null, null, null, null, null },
+				{ null, null, null, null, null, null, null, null }, { null, null, null, null, null, null, null, null },
+				{ null, null, null, null, null, null, null, null }, },
+				new String[] { "Nombre", "New column", "New column", "New column", "New column", "New column",
+						"New column", "New column" }) {
+			boolean[] columnEditables = new boolean[] { false, true, true, true, true, true, true, true };
 
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
@@ -171,7 +178,7 @@ public class TrabajoEntornos extends JPanel {
 
 		textField = new JTextField();
 		textField.setBorder(new LineBorder(Color.GRAY, 3, true));
-		textField.setBounds(719, 85, 110, 20);
+		textField.setBounds(770, 80, 110, 20);
 		frmValoracion.getContentPane().add(textField);
 		textField.setColumns(10);
 
@@ -190,61 +197,61 @@ public class TrabajoEntornos extends JPanel {
 		textField_1 = new JTextField();
 		textField_1.setBorder(new LineBorder(new Color(128, 128, 128), 3, true));
 		textField_1.setColumns(10);
-		textField_1.setBounds(719, 115, 110, 20);
+		textField_1.setBounds(770, 110, 110, 20);
 		frmValoracion.getContentPane().add(textField_1);
 
 		textField_2 = new JTextField();
 		textField_2.setBorder(new LineBorder(Color.GRAY, 3, true));
 		textField_2.setColumns(10);
-		textField_2.setBounds(719, 150, 110, 20);
+		textField_2.setBounds(770, 145, 110, 20);
 		frmValoracion.getContentPane().add(textField_2);
 
 		textField_3 = new JTextField();
 		textField_3.setBorder(new LineBorder(Color.GRAY, 3, true));
 		textField_3.setColumns(10);
-		textField_3.setBounds(719, 185, 110, 20);
+		textField_3.setBounds(770, 180, 110, 20);
 		frmValoracion.getContentPane().add(textField_3);
 
 		textField_4 = new JTextField();
 		textField_4.setBorder(new LineBorder(Color.GRAY, 3, true));
 		textField_4.setColumns(10);
-		textField_4.setBounds(719, 215, 110, 20);
+		textField_4.setBounds(770, 210, 110, 20);
 		frmValoracion.getContentPane().add(textField_4);
 
 		textField_5 = new JTextField();
 		textField_5.setBorder(new LineBorder(Color.GRAY, 3, true));
 		textField_5.setColumns(10);
-		textField_5.setBounds(719, 250, 110, 20);
+		textField_5.setBounds(770, 245, 110, 20);
 		frmValoracion.getContentPane().add(textField_5);
 
 		textField_6 = new JTextField();
 		textField_6.setBorder(new LineBorder(Color.GRAY, 3, true));
 		textField_6.setColumns(10);
-		textField_6.setBounds(719, 280, 110, 20);
+		textField_6.setBounds(770, 275, 110, 20);
 		frmValoracion.getContentPane().add(textField_6);
 
 		textField_7 = new JTextField();
 		textField_7.setBorder(new LineBorder(Color.GRAY, 3, true));
 		textField_7.setColumns(10);
-		textField_7.setBounds(719, 315, 110, 20);
+		textField_7.setBounds(770, 310, 110, 20);
 		frmValoracion.getContentPane().add(textField_7);
 
 		textField_8 = new JTextField();
 		textField_8.setColumns(10);
 		textField_8.setBorder(new LineBorder(Color.GRAY, 3, true));
-		textField_8.setBounds(719, 345, 110, 20);
+		textField_8.setBounds(770, 340, 110, 20);
 		frmValoracion.getContentPane().add(textField_8);
 	}
 
-	@Override
-	public void paint(Graphics g) {
-
-		ImageIcon imagen = new ImageIcon(getClass().getResource("/imagenes/comida.jpg"));
-
-		g.drawImage(imagen.getImage(), 0, 0, getWidth(), getHeight(), this);
-
-		setOpaque(false);
-		super.paint(g);
-	}
+//	@Override
+//	public void paint(Graphics g) {
+//
+//		ImageIcon imagen = new ImageIcon(getClass().getResource("/imagenes/comida.jpg"));
+//
+//		g.drawImage(imagen.getImage(), 0, 0, getWidth(), getHeight(), this);
+//
+//		setOpaque(false);
+//		super.paint(g);
+//	}
 
 }
