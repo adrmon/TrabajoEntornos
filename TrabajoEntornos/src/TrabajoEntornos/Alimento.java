@@ -83,12 +83,12 @@ public class Alimento {
 			double azucar,double proteinas, double sal, double calorias) {
 		this.nombre=nombre;
 		this.grasas=grasas;
-		if(grasas_saturadas<grasas) {
+		if(grasas_saturadas<=grasas) {
 			this.grasas_saturadas=grasas_saturadas;
 		}
 		else System.out.println("Las grasas saturadas no pueden ser mayores que las grasas");
 		this.hidratos=hidratos;
-		if (azucar<hidratos) {
+		if (azucar<=hidratos) {
 			this.azucar=azucar;
 		}
 		else System.out.println("El azucar no pude ser mayor que los hidratos");
@@ -273,9 +273,12 @@ public class Alimento {
 
 	@Override
 	public String toString() {
-		return "Alimento [grasas=" + grasas + ", grasas_saturadas=" + grasas_saturadas + ", hidratos=" + hidratos
-				+ ", azucar=" + azucar + ", proteinas=" + proteinas + ", sal=" + sal + ", calorias=" + calorias + "]";
+		return "Alimento [nombre=" + nombre + ", grasas=" + grasas + ", grasas_saturadas=" + grasas_saturadas
+				+ ", hidratos=" + hidratos + ", azucar=" + azucar + ", proteinas=" + proteinas + ", sal=" + sal
+				+ ", calorias=" + calorias + "]";
 	}
+
+	
 	
 	
 

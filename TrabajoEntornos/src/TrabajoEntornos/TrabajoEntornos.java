@@ -39,10 +39,13 @@ import java.awt.Graphics;
 
 public class TrabajoEntornos extends JPanel {
 
-	//LINEA CREADA PARA IMPORTAR EL ARRAY LIST DE LA CLASE LISTA
-	private static Lista nuevaLista = new Lista();
-	//
-	
+	private static Alimento patatasFritas = new Alimento("Patatas Fritas", 37.47, 10.96, 49.74, 4.12, 6.56, 525, 547);
+	private static Alimento alitasDePollo = new Alimento("Alitas de Pollo", 19.3, 5.4, 0, 0, 26.64, 404, 288);
+	private static Alimento heladoVainilla = new Alimento("Helado de Vainilla", 11, 6.79, 23.6, 21.22, 33.5, 80, 201);
+	private static Alimento gominolas = new Alimento("Gominolas", 0.05, 0, 93.55, 70, 0, 50, 375);
+	private static Alimento brocoli = new Alimento("Brocoli", 0.37, 0.039, 6.64, 1.7, 2.82, 33, 34);
+	private static Alimento coliflor = new Alimento("Coliflor", 0.1, 0.032, 5.3, 2.4, 1.98, 30, 25);
+
 	private JFrame frmValoracion;
 	private JTable table;
 	private JCheckBox chckbxNewCheckBox_1;
@@ -71,10 +74,16 @@ public class TrabajoEntornos extends JPanel {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		//ARRAY LIST CREADO
-		ArrayList<Alimento> alimentos = nuevaLista.getAlimentos();
-		// LOS DATOS SON CORRECTOS
-		// System.out.println(alimentos);
+		// ARRAY LIST CREADO
+		
+		ArrayList<Alimento> listaAlimentos = new ArrayList<Alimento>();
+
+		listaAlimentos.add(patatasFritas);
+		listaAlimentos.add(alitasDePollo);
+		listaAlimentos.add(heladoVainilla);
+		listaAlimentos.add(gominolas);
+		listaAlimentos.add(brocoli);
+		listaAlimentos.add(coliflor);
 
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -104,6 +113,7 @@ public class TrabajoEntornos extends JPanel {
 		frmValoracion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		Scanner tec = new Scanner(System.in);
+
 		table = new JTable();
 		table.setFont(new Font("Arial", Font.BOLD, 13));
 		table.setBorder(new LineBorder(new Color(255, 200, 0), 3, true));
@@ -111,12 +121,24 @@ public class TrabajoEntornos extends JPanel {
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		table.setBounds(66, 41, 696, 330);
 
+		Object[][] data;
+
 		table.setModel(new DefaultTableModel(new Object[][] {
 				{ "Nombre", "Grasas", "G Saturadas", "Hidratos", "Azucares", "Proteinas", "Sal", "Calorias" },
-				{ null, null, null, null, null, null, null, null }, { null, null, null, null, null, null, null, null },
-				{ null, null, null, null, null, null, null, null }, { null, null, null, null, null, null, null, null },
-				{ null, null, null, null, null, null, null, null }, { null, null, null, null, null, null, null, null },
-				{ null, null, null, null, null, null, null, null }, { null, null, null, null, null, null, null, null },
+				{ String.valueOf(patatasFritas.getNombre()), String.valueOf(patatasFritas.getGrasas()), String.valueOf(patatasFritas.getGrasas_saturadas()), String.valueOf(patatasFritas.getHidratos()),
+					String.valueOf(patatasFritas.getAzucar()), String.valueOf(patatasFritas.getProteinas()), String.valueOf(patatasFritas.getSal()), String.valueOf(patatasFritas.getCalorias()) },
+				{ String.valueOf(alitasDePollo.getNombre()), String.valueOf(alitasDePollo.getGrasas()), String.valueOf(alitasDePollo.getGrasas_saturadas()), String.valueOf(alitasDePollo.getHidratos()),
+						String.valueOf(alitasDePollo.getAzucar()), String.valueOf(alitasDePollo.getProteinas()), String.valueOf(alitasDePollo.getSal()), String.valueOf(alitasDePollo.getCalorias())  }, 
+				{ String.valueOf(heladoVainilla.getNombre()), String.valueOf(heladoVainilla.getGrasas()), String.valueOf(heladoVainilla.getGrasas_saturadas()), String.valueOf(heladoVainilla.getHidratos()),
+							String.valueOf(heladoVainilla.getAzucar()), String.valueOf(heladoVainilla.getProteinas()), String.valueOf(heladoVainilla.getSal()), String.valueOf(heladoVainilla.getCalorias()) },
+				{ String.valueOf(gominolas.getNombre()), String.valueOf(gominolas.getGrasas()), String.valueOf(gominolas.getGrasas_saturadas()), String.valueOf(gominolas.getHidratos()),
+								String.valueOf(gominolas.getAzucar()), String.valueOf(gominolas.getProteinas()), String.valueOf(gominolas.getSal()), String.valueOf(gominolas.getCalorias()) },
+				{ String.valueOf(brocoli.getNombre()), String.valueOf(brocoli.getGrasas()), String.valueOf(brocoli.getGrasas_saturadas()), String.valueOf(brocoli.getHidratos()),
+									String.valueOf(brocoli.getAzucar()), String.valueOf(brocoli.getProteinas()), String.valueOf(brocoli.getSal()), String.valueOf(brocoli.getCalorias()) },
+				{ String.valueOf(coliflor.getNombre()), String.valueOf(coliflor.getGrasas()), String.valueOf(coliflor.getGrasas_saturadas()), String.valueOf(coliflor.getHidratos()),
+										String.valueOf(coliflor.getAzucar()), String.valueOf(coliflor.getProteinas()), String.valueOf(coliflor.getSal()), String.valueOf(coliflor.getCalorias()) },
+				{ null, null, null, null, null, null, null, null },
+				{ null, null, null, null, null, null, null, null },
 				{ null, null, null, null, null, null, null, null }, },
 				new String[] { "Nombre", "New column", "New column", "New column", "New column", "New column",
 						"New column", "New column" }) {
