@@ -41,7 +41,7 @@ import java.awt.event.MouseEvent;
 
 public class TrabajoEntornos extends JPanel {
 
-	private static Alimento patatasFritas = new Alimento("Patatas Fritas", 37.47, 10.96, 49.74, 4.12, 6.56, 525, 547);
+	private static Alimento patatasFritas = new Alimento("Patatas Fritas", 7.47, 10.96, 49.74, 4.12, 6.56, 525, 547);
 	private static Alimento alitasDePollo = new Alimento("Alitas de Pollo", 19.3, 5.4, 0, 0, 26.64, 404, 288);
 	private static Alimento heladoVainilla = new Alimento("Helado de Vainilla", 11, 6.79, 23.6, 21.22, 33.5, 80, 201);
 	private static Alimento gominolas = new Alimento("Gominolas", 0.05, 0, 93.55, 70, 0, 50, 375);
@@ -50,11 +50,6 @@ public class TrabajoEntornos extends JPanel {
 
 	private JFrame frmValoracion;
 	private JTable table;
-	private JCheckBox chckbxNewCheckBox_1;
-	private JCheckBox chckbxNewCheckBox_2;
-	private JCheckBox chckbxNewCheckBox_3;
-	private JCheckBox chckbxNewCheckBox_4;
-	private JCheckBox chckbxNewCheckBox_5;
 	private JLabel lblSeleccionaLosAlimentos;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -65,6 +60,24 @@ public class TrabajoEntornos extends JPanel {
 	private JTextField textField_6;
 	private JTextField textField_7;
 	private JTextField textField_8;
+	private JTextField textField_16;
+	private JTextField textField_17;
+	private JTextField textField_25;
+	private JTextField textField_26;
+	private JTextField textField_9;
+	private JTextField textField_10;
+	private JTextField textField_11;
+	private JTextField textField_12;
+	private JTextField textField_15;
+	private JTextField textField_18;
+	private JTextField textField_19;
+	private JTextField textField_20;
+	private JTextField textField_21;
+	private JTextField textField_22;
+	private JTextField textField_23;
+	private JTextField textField_24;
+	private JTextField textField_13;
+	private JTextField textField_14;
 
 	public TrabajoEntornos() {
 
@@ -111,7 +124,7 @@ public class TrabajoEntornos extends JPanel {
 		frmValoracion = new JFrame();
 		frmValoracion.setTitle("Valoracion de la Dieta");
 
-		frmValoracion.setBounds(100, 100, 938, 580);
+		frmValoracion.setBounds(100, 100, 974, 677);
 		frmValoracion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		Scanner tec = new Scanner(System.in);
@@ -121,7 +134,7 @@ public class TrabajoEntornos extends JPanel {
 		table.setBorder(new LineBorder(new Color(255, 200, 0), 3, true));
 		table.setRowHeight(33);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		table.setBounds(66, 41, 696, 330);
+		table.setBounds(53, 41, 763, 330);
 
 		Object[][] data;
 
@@ -173,178 +186,6 @@ public class TrabajoEntornos extends JPanel {
 		frmValoracion.getContentPane().setLayout(null);
 		frmValoracion.getContentPane().add(table);
 
-		JCheckBox chckbxNewCheckBox = new JCheckBox("");
-		chckbxNewCheckBox.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// IF PARA HABILITAR EL PRIMER CAMPO
-				if (chckbxNewCheckBox.isSelected()) {
-					textField.setEditable(false);
-					textField.setEnabled(false);
-
-				}else {
-					textField.setEditable(true);
-					textField.setEnabled(true);
-				}
-			}
-		});
-		chckbxNewCheckBox.setSelected(false);
-		chckbxNewCheckBox.setBounds(37, 80, 21, 21);
-		frmValoracion.getContentPane().add(chckbxNewCheckBox);
-
-		chckbxNewCheckBox_1 = new JCheckBox("");
-		chckbxNewCheckBox_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// IF PARA HABILITAR EL SEGUNDO CAMPO
-				if (chckbxNewCheckBox_1.isSelected()) {
-					textField_1.setEditable(false);
-					textField_1.setEnabled(false);
-
-				}else {
-					textField_1.setEditable(true);
-					textField_1.setEnabled(true);
-				}
-			}
-		});
-		chckbxNewCheckBox_1.setSelected(false);
-		chckbxNewCheckBox_1.setBounds(37, 110, 21, 21);
-		frmValoracion.getContentPane().add(chckbxNewCheckBox_1);
-
-		chckbxNewCheckBox_2 = new JCheckBox("");
-		chckbxNewCheckBox_2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// IF PARA HABILITAR EL TERCER CAMPO
-				if (chckbxNewCheckBox_2.isSelected()) {
-					textField_2.setEditable(false);
-					textField_2.setEnabled(false);
-
-				}else {
-					textField_2.setEditable(true);
-					textField_2.setEnabled(true);
-				}
-			}
-		});
-		chckbxNewCheckBox_2.setSelected(false);
-		chckbxNewCheckBox_2.setBounds(37, 145, 21, 21);
-		frmValoracion.getContentPane().add(chckbxNewCheckBox_2);
-
-		chckbxNewCheckBox_3 = new JCheckBox("");
-		chckbxNewCheckBox_3.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// IF PARA HABILITAR EL CUARTO CAMPO
-				if (chckbxNewCheckBox_3.isSelected()) {
-					textField_3.setEditable(false);
-					textField_3.setEnabled(false);
-
-				}else {
-					textField_3.setEditable(true);
-					textField_3.setEnabled(true);
-				}
-			}
-		});
-		chckbxNewCheckBox_3.setSelected(false);
-		chckbxNewCheckBox_3.setBounds(37, 180, 21, 21);
-		frmValoracion.getContentPane().add(chckbxNewCheckBox_3);
-
-		chckbxNewCheckBox_4 = new JCheckBox("");
-		chckbxNewCheckBox_4.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// IF PARA HABILITAR EL QUINTO CAMPO
-				if (chckbxNewCheckBox_4.isSelected()) {
-					textField_4.setEditable(false);
-					textField_4.setEnabled(false);
-
-				}else {
-					textField_4.setEditable(true);
-					textField_4.setEnabled(true);
-				}
-			}
-		});
-		chckbxNewCheckBox_4.setSelected(false);
-		chckbxNewCheckBox_4.setBounds(37, 210, 21, 21);
-		frmValoracion.getContentPane().add(chckbxNewCheckBox_4);
-
-		chckbxNewCheckBox_5 = new JCheckBox("");
-		chckbxNewCheckBox_5.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// IF PARA HABILITAR EL SEXTO CAMPO
-				if (chckbxNewCheckBox_5.isSelected()) {
-					textField_5.setEditable(false);
-					textField_5.setEnabled(false);
-
-				}else {
-					textField_5.setEditable(true);
-					textField_5.setEnabled(true);
-				}
-			}
-			
-		});
-		chckbxNewCheckBox_5.setSelected(false);
-		chckbxNewCheckBox_5.setBounds(37, 245, 21, 21);
-		frmValoracion.getContentPane().add(chckbxNewCheckBox_5);
-
-		JCheckBox chckbxNewCheckBox_6 = new JCheckBox("");
-		chckbxNewCheckBox_6.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// IF PARA HABILITAR EL SEPTIMO CAMPO
-				if (chckbxNewCheckBox_6.isSelected()) {
-					textField_6.setEditable(false);
-					textField_6.setEnabled(false);
-
-				}else {
-					textField_6.setEditable(true);
-					textField_6.setEnabled(true);
-				}
-			}
-		});
-		chckbxNewCheckBox_6.setSelected(false);
-		chckbxNewCheckBox_6.setBounds(37, 275, 21, 21);
-		frmValoracion.getContentPane().add(chckbxNewCheckBox_6);
-
-		JCheckBox chckbxNewCheckBox_7 = new JCheckBox("");
-		chckbxNewCheckBox_7.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// IF PARA HABILITAR EL OCTAVO CAMPO
-				if (chckbxNewCheckBox_7.isSelected()) {
-					textField_7.setEditable(false);
-					textField_7.setEnabled(false);
-
-				}else {
-					textField_7.setEditable(true);
-					textField_7.setEnabled(true);
-				}
-			}
-		});
-		chckbxNewCheckBox_7.setSelected(false);
-		chckbxNewCheckBox_7.setBounds(37, 310, 21, 21);
-		frmValoracion.getContentPane().add(chckbxNewCheckBox_7);
-
-		JCheckBox chckbxNewCheckBox_8 = new JCheckBox("");
-		chckbxNewCheckBox_8.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// IF PARA HABILITAR EL NOVENO CAMPO
-				if (chckbxNewCheckBox_8.isSelected()) {
-					textField_8.setEditable(false);
-					textField_8.setEnabled(false);
-
-				}else {
-					textField_8.setEditable(true);
-					textField_8.setEnabled(true);
-				}
-			}
-		});
-		chckbxNewCheckBox_8.setSelected(false);
-		chckbxNewCheckBox_8.setBounds(37, 340, 21, 21);
-		frmValoracion.getContentPane().add(chckbxNewCheckBox_8);
-
 		lblSeleccionaLosAlimentos = new JLabel(
 				"Selecciona los alimentos que consumes y escribe la cantidad en gramos.");
 		lblSeleccionaLosAlimentos.setBounds(195, 12, 455, 17);
@@ -352,99 +193,176 @@ public class TrabajoEntornos extends JPanel {
 
 		JButton btnNewButton = new JButton("Valorar Dieta");
 		btnNewButton.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
-		btnNewButton.setBounds(254, 400, 139, 27);
+		btnNewButton.setBounds(276, 533, 139, 27);
 		frmValoracion.getContentPane().add(btnNewButton);
 
 		JTextArea textArea = new JTextArea();
 		textArea.setBorder(new LineBorder(UIManager.getColor("CheckBoxMenuItem.acceleratorForeground"), 3, true));
 		textArea.setEnabled(false);
 		textArea.setEditable(false);
-		textArea.setBounds(509, 402, 371, 99);
+		textArea.setBounds(509, 500, 371, 99);
 		frmValoracion.getContentPane().add(textArea);
 		
 		textField = new JTextField();
-		textField.setEnabled(false);
-		textField.setEditable(false);
+		textField.setText("0");
 	 
 		textField.setBorder(new LineBorder(Color.GRAY, 3, true));
-		textField.setBounds(770, 80, 110, 20);
+		textField.setBounds(841, 78, 76, 20);
 		frmValoracion.getContentPane().add(textField);
 		textField.setColumns(10);
 
 		textField_1 = new JTextField();
-		textField_1.setEnabled(false);
-		textField_1.setEditable(false);
+		textField_1.setText("0");
 		textField_1.setBorder(new LineBorder(new Color(128, 128, 128), 3, true));
 		textField_1.setColumns(10);
-		textField_1.setBounds(770, 110, 110, 20);
+		textField_1.setBounds(841, 108, 76, 20);
 		frmValoracion.getContentPane().add(textField_1);
 
 		textField_2 = new JTextField();
-		textField_2.setEnabled(false);
-		textField_2.setEditable(false);
+		textField_2.setText("0");
 		textField_2.setBorder(new LineBorder(Color.GRAY, 3, true));
 		textField_2.setColumns(10);
-		textField_2.setBounds(770, 145, 110, 20);
+		textField_2.setBounds(841, 143, 76, 20);
 		frmValoracion.getContentPane().add(textField_2);
 
 		textField_3 = new JTextField();
-		textField_3.setEnabled(false);
-		textField_3.setEditable(false);
+		textField_3.setText("0");
 		textField_3.setBorder(new LineBorder(Color.GRAY, 3, true));
 		textField_3.setColumns(10);
-		textField_3.setBounds(770, 180, 110, 20);
+		textField_3.setBounds(841, 178, 76, 20);
 		frmValoracion.getContentPane().add(textField_3);
 
 		textField_4 = new JTextField();
-		textField_4.setEnabled(false);
-		textField_4.setEditable(false);
+		textField_4.setText("0");
 		textField_4.setBorder(new LineBorder(Color.GRAY, 3, true));
 		textField_4.setColumns(10);
-		textField_4.setBounds(770, 210, 110, 20);
+		textField_4.setBounds(841, 208, 76, 20);
 		frmValoracion.getContentPane().add(textField_4);
 
 		textField_5 = new JTextField();
-		textField_5.setEnabled(false);
-		textField_5.setEditable(false);
+		textField_5.setText("0");
 		textField_5.setBorder(new LineBorder(Color.GRAY, 3, true));
 		textField_5.setColumns(10);
-		textField_5.setBounds(770, 245, 110, 20);
+		textField_5.setBounds(841, 243, 76, 20);
 		frmValoracion.getContentPane().add(textField_5);
 
 		textField_6 = new JTextField();
-		textField_6.setEnabled(false);
-		textField_6.setEditable(false);
+		textField_6.setText("0");
 		textField_6.setBorder(new LineBorder(Color.GRAY, 3, true));
 		textField_6.setColumns(10);
-		textField_6.setBounds(770, 275, 110, 20);
+		textField_6.setBounds(841, 273, 76, 20);
 		frmValoracion.getContentPane().add(textField_6);
 
 		textField_7 = new JTextField();
-		textField_7.setEnabled(false);
-		textField_7.setEditable(false);
+		textField_7.setText("0");
 		textField_7.setBorder(new LineBorder(Color.GRAY, 3, true));
 		textField_7.setColumns(10);
-		textField_7.setBounds(770, 310, 110, 20);
+		textField_7.setBounds(841, 308, 76, 20);
 		frmValoracion.getContentPane().add(textField_7);
 
 		textField_8 = new JTextField();
-		textField_8.setEnabled(false);
-		textField_8.setEditable(false);
+		textField_8.setText("0");
 		textField_8.setColumns(10);
 		textField_8.setBorder(new LineBorder(Color.GRAY, 3, true));
-		textField_8.setBounds(770, 340, 110, 20);
+		textField_8.setBounds(841, 338, 76, 20);
 		frmValoracion.getContentPane().add(textField_8);
+		
+		textField_16 = new JTextField();
+		textField_16.setColumns(10);
+		textField_16.setBounds(53, 405, 95, 34);
+		frmValoracion.getContentPane().add(textField_16);
+		
+		textField_17 = new JTextField();
+		textField_17.setText("0");
+		textField_17.setColumns(10);
+		textField_17.setBorder(new LineBorder(Color.GRAY, 3, true));
+		textField_17.setBounds(841, 411, 76, 20);
+		frmValoracion.getContentPane().add(textField_17);
+		
+		textField_25 = new JTextField();
+		textField_25.setColumns(10);
+		textField_25.setBounds(53, 437, 95, 34);
+		frmValoracion.getContentPane().add(textField_25);
+		
+		textField_26 = new JTextField();
+		textField_26.setText("0");
+		textField_26.setColumns(10);
+		textField_26.setBorder(new LineBorder(Color.GRAY, 3, true));
+		textField_26.setBounds(841, 443, 76, 20);
+		frmValoracion.getContentPane().add(textField_26);
+		
+		JLabel lblAadeTusPropios = new JLabel("Añade tus propios alimentos y escribe la cantidad en gramos.");
+		lblAadeTusPropios.setBounds(195, 378, 455, 17);
+		frmValoracion.getContentPane().add(lblAadeTusPropios);
+		
+		textField_9 = new JTextField();
+		textField_9.setColumns(10);
+		textField_9.setBounds(148, 405, 95, 34);
+		frmValoracion.getContentPane().add(textField_9);
+		
+		textField_10 = new JTextField();
+		textField_10.setColumns(10);
+		textField_10.setBounds(148, 437, 95, 34);
+		frmValoracion.getContentPane().add(textField_10);
+		
+		textField_11 = new JTextField();
+		textField_11.setColumns(10);
+		textField_11.setBounds(242, 405, 95, 34);
+		frmValoracion.getContentPane().add(textField_11);
+		
+		textField_12 = new JTextField();
+		textField_12.setColumns(10);
+		textField_12.setBounds(242, 437, 95, 34);
+		frmValoracion.getContentPane().add(textField_12);
+		
+		textField_15 = new JTextField();
+		textField_15.setColumns(10);
+		textField_15.setBounds(434, 405, 95, 34);
+		frmValoracion.getContentPane().add(textField_15);
+		
+		textField_18 = new JTextField();
+		textField_18.setColumns(10);
+		textField_18.setBounds(434, 437, 95, 34);
+		frmValoracion.getContentPane().add(textField_18);
+		
+		textField_19 = new JTextField();
+		textField_19.setColumns(10);
+		textField_19.setBounds(530, 405, 95, 34);
+		frmValoracion.getContentPane().add(textField_19);
+		
+		textField_20 = new JTextField();
+		textField_20.setColumns(10);
+		textField_20.setBounds(530, 437, 95, 34);
+		frmValoracion.getContentPane().add(textField_20);
+		
+		textField_21 = new JTextField();
+		textField_21.setColumns(10);
+		textField_21.setBounds(626, 405, 95, 34);
+		frmValoracion.getContentPane().add(textField_21);
+		
+		textField_22 = new JTextField();
+		textField_22.setColumns(10);
+		textField_22.setBounds(626, 437, 95, 34);
+		frmValoracion.getContentPane().add(textField_22);
+		
+		textField_23 = new JTextField();
+		textField_23.setColumns(10);
+		textField_23.setBounds(721, 405, 95, 34);
+		frmValoracion.getContentPane().add(textField_23);
+		
+		textField_24 = new JTextField();
+		textField_24.setColumns(10);
+		textField_24.setBounds(721, 437, 95, 34);
+		frmValoracion.getContentPane().add(textField_24);
+		
+		textField_13 = new JTextField();
+		textField_13.setColumns(10);
+		textField_13.setBounds(338, 405, 95, 34);
+		frmValoracion.getContentPane().add(textField_13);
+		
+		textField_14 = new JTextField();
+		textField_14.setColumns(10);
+		textField_14.setBounds(338, 437, 95, 34);
+		frmValoracion.getContentPane().add(textField_14);
 	}
-
-//	@Override
-//	public void paint(Graphics g) {
-//
-//		ImageIcon imagen = new ImageIcon(getClass().getResource("/imagenes/comida.jpg"));
-//
-//		g.drawImage(imagen.getImage(), 0, 0, getWidth(), getHeight(), this);
-//
-//		setOpaque(false);
-//		super.paint(g);
-//	}
-
 }
