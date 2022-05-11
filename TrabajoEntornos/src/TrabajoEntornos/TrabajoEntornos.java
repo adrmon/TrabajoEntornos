@@ -30,6 +30,8 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
  * <h2>Interfaz</h2>
@@ -47,6 +49,8 @@ public class TrabajoEntornos extends JPanel {
 	private static Alimento gominolas = new Alimento("Gominolas", 0.05, 0, 93.55, 70, 0, 50, 375);
 	private static Alimento brocoli = new Alimento("Brocoli", 0.37, 0.039, 6.64, 1.7, 2.82, 33, 34);
 	private static Alimento coliflor = new Alimento("Coliflor", 0.1, 0.032, 5.3, 2.4, 1.98, 30, 25);
+	private static ArrayList<Alimento> listaAlimentos;
+	
 
 	private JFrame frmValoracion;
 	private JTable table;
@@ -90,8 +94,8 @@ public class TrabajoEntornos extends JPanel {
 	 */
 	public static void main(String[] args) {
 		// ARRAY LIST CREADO
-
-		ArrayList<Alimento> listaAlimentos = new ArrayList<Alimento>();
+		listaAlimentos = new ArrayList<Alimento>();
+		
 
 		listaAlimentos.add(patatasFritas);
 		listaAlimentos.add(alitasDePollo);
@@ -192,6 +196,11 @@ public class TrabajoEntornos extends JPanel {
 		frmValoracion.getContentPane().add(lblSeleccionaLosAlimentos);
 
 		JButton btnNewButton = new JButton("Valorar Dieta");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
 		btnNewButton.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
 		btnNewButton.setBounds(276, 533, 139, 27);
 		frmValoracion.getContentPane().add(btnNewButton);
@@ -366,7 +375,24 @@ public class TrabajoEntornos extends JPanel {
 		frmValoracion.getContentPane().add(textField_14);
 		
 		JButton botonadd = new JButton("Añadir alimentos");
-		botonadd.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
+		botonadd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+		Alimento a1 = new Alimento(textField_16.getText(),Double.parseDouble(textField_9.getText()),Double.parseDouble(textField_11.getText()),
+				Double.parseDouble(textField_13.getText()),Double.parseDouble(textField_15.getText()),Double.parseDouble(textField_19.getText()),
+						Double.parseDouble(textField_21.getText()),Double.parseDouble(textField_23.getText()));
+		
+		Alimento a2 = new Alimento(textField_25.getText(),Double.parseDouble(textField_10.getText()),Double.parseDouble(textField_12.getText()),
+				Double.parseDouble(textField_14.getText()),Double.parseDouble(textField_18.getText()),Double.parseDouble(textField_20.getText()),
+						Double.parseDouble(textField_22.getText()),Double.parseDouble(textField_24.getText()));
+		
+		
+			listaAlimentos.add(a1);
+			listaAlimentos.add(a2);
+			
+			
+			}
+		});
+		botonadd.setBorder(new LineBorder(new Color(0, 100, 0), 3, true));
 		botonadd.setBounds(53, 483, 139, 27);
 		frmValoracion.getContentPane().add(botonadd);
 		
