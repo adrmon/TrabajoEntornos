@@ -178,15 +178,13 @@ public class Alimento {
 	 *
 	 */
 
-	void calcularIngestaCaloricaMalsana(ArrayList<Alimento> alimentos_consumidos) {
+	static String calcularIngestaCaloricaMalsana(ArrayList<Alimento> alimentos_consumidos) {
 
+		String resultado;
 		// Cantidad de grasa total consumida
 		double grasa = 0;
 		// Cantidad de calor�as consumidas en total
 		double calorias = 0;
-		// Valor l�mite del c�lculo, si la cantidad de grasas totales superan este
-		// valor, se considera una dieta malsana
-		double limite_ingesta_malsana = 0.3 * calorias;
 
 		// Obtenci�n de los valores totales consumidos a lo alrgo del d�a
 		for (int i = 0; i < alimentos_consumidos.size(); i++) {
@@ -194,11 +192,16 @@ public class Alimento {
 			calorias += alimentos_consumidos.get(i).getCalorias();
 
 		}
+		// Valor l�mite del c�lculo, si la cantidad de grasas totales superan este
+		// valor, se considera una dieta malsana
+		double limite_ingesta_malsana = 0.3 * calorias;
 
 		if (limite_ingesta_malsana >= grasa) {
-			System.out.println("Ingesta cal�rica en valores normales");
-		} else
-			System.out.println("Ingesta cal�rica malsana");
+			resultado = "Ingesta cal�rica en valores normales";
+		} else {
+			resultado = "Ingesta cal�rica malsana";
+		}
+		return resultado;
 
 	}
 
@@ -209,21 +212,13 @@ public class Alimento {
 	 *
 	 */
 
-	void calcularConsumoDeAzucar(ArrayList<Alimento> alimentos_consumidos) {
+	static String calcularConsumoDeAzucar(ArrayList<Alimento> alimentos_consumidos) {
 
+		String resultado;
 		// Cantidad de azucar total consumido
 		double azucar = 0;
 		// Cantidad de calor�as consumidas en total
 		double calorias = 0;
-		// Valor l�mite del c�lculo, si la cantidad de grasas totales superan este
-		// valor, se considera una dieta malsana
-		double limite_ingesta_azucar = 0.1 * calorias;
-		/*
-		 * Valor l�mite del c�lculo, si la cantidad de grasas totales superan este
-		 * valor, se considera una dieta equilibrada si es inferior se considera una
-		 * dieta saludable
-		 */
-		double consumo_recomendado_azucar = 0.05 * calorias;
 
 		// Obtenci�n de los valores totales consumidos a lo alrgo del d�a
 		for (int i = 0; i < alimentos_consumidos.size(); i++) {
@@ -232,12 +227,24 @@ public class Alimento {
 
 		}
 
+		// Valor l�mite del c�lculo, si la cantidad de azucares totales superan este
+		// valor, se considera una dieta malsana
+		double limite_ingesta_azucar = 0.1 * calorias;
+		/*
+		 * Valor l�mite del c�lculo, si la cantidad de azucares totales superan este
+		 * valor, se considera una dieta equilibrada si es inferior se considera una
+		 * dieta saludable
+		 */
+		double consumo_recomendado_azucar = 0.05 * calorias;
+
 		if (azucar <= consumo_recomendado_azucar) {
-			System.out.println("Consumo de azucar menor al 5% de la ingesta cal�rica total");
+			resultado = "Consumo de azucar menor al 5% de la ingesta cal�rica total";
 		} else if (azucar >= consumo_recomendado_azucar && azucar < limite_ingesta_azucar) {
-			System.out.println("Consumo de azucar menor al 10% de la ingesta cal�rica total");
+			resultado = "Consumo de azucar menor al 10% de la ingesta cal�rica total";
 		} else
-			System.out.println("Consumo de azucar superior al 10% de la ingesta cal�orica total");
+			resultado = "Consumo de azucar superior al 10% de la ingesta cal�orica total";
+
+		return resultado;
 	}
 
 	/**
@@ -246,7 +253,9 @@ public class Alimento {
 	 *                             usuario
 	 *
 	 */
-	void calcularConsumoDiarioDeSal(ArrayList<Alimento> alimentos_consumidos) {
+	static String calcularConsumoDiarioDeSal(ArrayList<Alimento> alimentos_consumidos) {
+
+		String resultado;
 		// Cantidad total de sal consumida
 		double sal = 0;
 
@@ -257,10 +266,11 @@ public class Alimento {
 		}
 
 		if (sal < 5) {
-			System.out.println("Consumo de sal inferior a 5g diarios");
+			resultado = "Consumo de sal inferior a 5g diarios";
 		} else {
-			System.out.println("Consumo elevado de sal, riesgo de enfermedades cardiop�ticas e hipertension");
+			resultado = "Consumo elevado de sal, riesgo de enfermedades cardiop�ticas e hipertension";
 		}
+		return resultado;
 	}
 
 	// Metodo para calcular total de nutrientes en funcion de la cantidad total de
@@ -272,7 +282,8 @@ public class Alimento {
 	 * 
 	 *
 	 */
-	void calcularCantidadNutrientesTotales(double gramos) {
+	public void calcularCantidadNutrientesTotales(double gramos) {
+
 		this.grasas = (this.grasas * gramos) / 100;
 		this.grasas_saturadas = (this.grasas_saturadas * gramos) / 100;
 		this.hidratos = (this.hidratos * gramos) / 100;
@@ -280,6 +291,7 @@ public class Alimento {
 		this.proteinas = (this.proteinas * gramos) / 100;
 		this.sal = (this.sal * gramos) / 100;
 		this.calorias = (this.calorias * gramos) / 100;
+
 	}
 
 	@Override

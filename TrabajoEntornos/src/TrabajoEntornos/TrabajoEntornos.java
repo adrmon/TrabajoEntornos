@@ -50,11 +50,11 @@ public class TrabajoEntornos extends JPanel {
 	private static Alimento alitasDePollo = new Alimento("Alitas de Pollo", 19.3, 5.4, 0, 0, 26.64, 404, 288);
 	private static Alimento heladoVainilla = new Alimento("Helado de Vainilla", 11, 6.79, 23.6, 21.22, 33.5, 80, 201);
 	private static Alimento gominolas = new Alimento("Gominolas", 0.05, 0, 93.55, 70, 0, 50, 375);
-	private static Alimento brocoli = new Alimento("Brocoli", 0.37, 0.039, 6.64, 1.7, 2.82, 33, 34);
+	private static Alimento brocoli = new Alimento("Brocoli", 0.37, 0.039, 6.64, 1.7, 2.82, 0.33, 34);
 	private static Alimento coliflor = new Alimento("Coliflor", 0.1, 0.032, 5.3, 2.4, 1.98, 30, 25);
-	private static Alimento chocolate = new Alimento("chocolate", 0.05, 0, 93.55, 70, 0, 50, 375);
-	private static Alimento merluza = new Alimento("Brocoli", 0.37, 0.039, 6.64, 1.7, 2.82, 33, 34);
-	private static Alimento piza = new Alimento("Coliflor", 0.1, 0.032, 5.3, 2.4, 1.98, 30, 25);
+	//private static Alimento chocolate = new Alimento("chocolate", 0.05, 0, 93.55, 70, 0, 50, 375);
+	//private static Alimento merluza = new Alimento("Brocoli", 0.37, 0.039, 6.64, 1.7, 2.82, 33, 34);
+	//private static Alimento piza = new Alimento("Coliflor", 0.1, 0.032, 5.3, 2.4, 1.98, 30, 25);
 	private static ArrayList<Alimento> listaAlimentos;
 
 	private JFrame frmValoracion;
@@ -195,6 +195,12 @@ public class TrabajoEntornos extends JPanel {
 		table.getColumnModel().getColumn(5).setMinWidth(40);
 		frmValoracion.getContentPane().setLayout(null);
 		frmValoracion.getContentPane().add(table);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBorder(new LineBorder(UIManager.getColor("CheckBoxMenuItem.acceleratorForeground"), 3, true));
+		textArea.setEditable(false);
+		textArea.setBounds(509, 500, 371, 99);
+		frmValoracion.getContentPane().add(textArea);
 
 		lblSeleccionaLosAlimentos = new JLabel(
 				"Selecciona los alimentos que consumes y escribe la cantidad en gramos.");
@@ -204,6 +210,25 @@ public class TrabajoEntornos extends JPanel {
 		JButton btnNewButton = new JButton("Valorar Dieta");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				textArea.setText("");
+				
+				patatasFritas.calcularCantidadNutrientesTotales(Double.parseDouble(textField.getText()));
+				alitasDePollo.calcularCantidadNutrientesTotales(Double.parseDouble(textField_1.getText()));
+				heladoVainilla.calcularCantidadNutrientesTotales(Double.parseDouble(textField_2.getText()));
+				gominolas.calcularCantidadNutrientesTotales(Double.parseDouble(textField_3.getText()));
+				brocoli.calcularCantidadNutrientesTotales(Double.parseDouble(textField_4.getText()));
+				coliflor.calcularCantidadNutrientesTotales(Double.parseDouble(textField_5.getText()));
+				
+				String resultado_ingesta_calorica_malsana= Alimento.calcularIngestaCaloricaMalsana(listaAlimentos);
+				String resultado_consumo_azucar=Alimento.calcularConsumoDeAzucar(listaAlimentos);
+				String resultado_consumo_sal=Alimento.calcularConsumoDiarioDeSal(listaAlimentos);
+				
+				textArea.append(resultado_ingesta_calorica_malsana+"\n");
+				textArea.append(resultado_consumo_azucar+"\n");
+				textArea.append(resultado_consumo_sal+"\n");
+				
+				
 
 			}
 		});
@@ -211,12 +236,7 @@ public class TrabajoEntornos extends JPanel {
 		btnNewButton.setBounds(276, 533, 139, 27);
 		frmValoracion.getContentPane().add(btnNewButton);
 
-		JTextArea textArea = new JTextArea();
-		textArea.setBorder(new LineBorder(UIManager.getColor("CheckBoxMenuItem.acceleratorForeground"), 3, true));
-		textArea.setEnabled(false);
-		textArea.setEditable(false);
-		textArea.setBounds(509, 500, 371, 99);
-		frmValoracion.getContentPane().add(textArea);
+		
 
 		textField = new JTextField();
 		textField.setText("0");
@@ -351,6 +371,8 @@ public class TrabajoEntornos extends JPanel {
 
 					}
 		else {
+			// FALTA METER EL METODO PARA CALCULAR LA CANTIDAD DE GRAMOS INTRODUCIDA
+			a1.calcularCantidadNutrientesTotales(Double.parseDouble(textField_17.getText()));
 				listaAlimentos.add(a1);
 		}
 				textField_16.setText("");
