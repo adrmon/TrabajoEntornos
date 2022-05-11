@@ -364,5 +364,14 @@ public class TrabajoEntornos extends JPanel {
 		textField_14.setColumns(10);
 		textField_14.setBounds(338, 437, 95, 34);
 		frmValoracion.getContentPane().add(textField_14);
+		
+		JButton botonadd = new JButton("Añadir alimentos");
+		botonadd.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
+		botonadd.setBounds(53, 483, 139, 27);
+		frmValoracion.getContentPane().add(botonadd);
+		
+		JLabel lblSiPones = new JLabel("Si pones 0 no se añade.");
+		lblSiPones.setBounds(823, 48, 169, 17);
+		frmValoracion.getContentPane().add(lblSiPones);
 	}
 }
