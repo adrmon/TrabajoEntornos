@@ -2,6 +2,9 @@ package TrabajoEntornos;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  * <h2>Clase Alimento</h2> Esta clase almacena los distintos valores
  * nutricionales de un alimento por cada 100g de dicho alimento.
@@ -78,23 +81,30 @@ public class Alimento {
 	 *
 	 */
 	protected double calorias;
-	
-	public Alimento(String nombre, double grasas, double grasas_saturadas,double hidratos, 
-			double azucar,double proteinas, double sal, double calorias) {
-		this.nombre=nombre;
-		this.grasas=grasas;
-		if(grasas_saturadas<=grasas) {
-			this.grasas_saturadas=grasas_saturadas;
-		}
-		else System.out.println("Las grasas saturadas no pueden ser mayores que las grasas");
-		this.hidratos=hidratos;
-		if (azucar<=hidratos) {
-			this.azucar=azucar;
-		}
-		else System.out.println("El azucar no pude ser mayor que los hidratos");
-		this.proteinas=proteinas;
-		this.sal=sal;
-		this.calorias=calorias;
+
+	protected JPanel panel = new JPanel();
+
+	public Alimento(String nombre, double grasas, double grasas_saturadas, double hidratos, double azucar,
+			double proteinas, double sal, double calorias) {
+		this.nombre = nombre;
+		this.grasas = grasas;
+		if (grasas_saturadas <= grasas) {
+			this.grasas_saturadas = grasas_saturadas;
+		} else
+			JOptionPane.showMessageDialog(panel,
+					"Las grasas saturadas de " + this.getNombre() + " no pueden ser mayores que las grasas", "Warning",
+					JOptionPane.WARNING_MESSAGE);
+
+		this.hidratos = hidratos;
+		if (azucar <= hidratos) {
+			this.azucar = azucar;
+		} else
+			JOptionPane.showMessageDialog(panel,
+					"El azucar de " + this.getNombre() + " no puede ser mayor que los hidratos", "Warning",
+					JOptionPane.WARNING_MESSAGE);
+		this.proteinas = proteinas;
+		this.sal = sal;
+		this.calorias = calorias;
 	}
 
 	public String getNombre() {
@@ -185,7 +195,7 @@ public class Alimento {
 
 		}
 
-		if (limite_ingesta_malsana > grasa) {
+		if (limite_ingesta_malsana >= grasa) {
 			System.out.println("Ingesta cal�rica en valores normales");
 		} else
 			System.out.println("Ingesta cal�rica malsana");
@@ -222,9 +232,9 @@ public class Alimento {
 
 		}
 
-		if (azucar < consumo_recomendado_azucar) {
+		if (azucar <= consumo_recomendado_azucar) {
 			System.out.println("Consumo de azucar menor al 5% de la ingesta cal�rica total");
-		} else if (azucar > consumo_recomendado_azucar && azucar < limite_ingesta_azucar) {
+		} else if (azucar >= consumo_recomendado_azucar && azucar < limite_ingesta_azucar) {
 			System.out.println("Consumo de azucar menor al 10% de la ingesta cal�rica total");
 		} else
 			System.out.println("Consumo de azucar superior al 10% de la ingesta cal�orica total");
@@ -252,23 +262,24 @@ public class Alimento {
 			System.out.println("Consumo elevado de sal, riesgo de enfermedades cardiop�ticas e hipertension");
 		}
 	}
-	
-	//Metodo para calcular total de nutrientes en funcion de la cantidad total de gramos del alimento
-	
+
+	// Metodo para calcular total de nutrientes en funcion de la cantidad total de
+	// gramos del alimento
+
 	/**
 	 *
 	 * @param gramos Cantidad de gramos totales del alimento
-	 *                             
+	 * 
 	 *
 	 */
 	void calcularCantidadNutrientesTotales(double gramos) {
-		this.grasas=(this.grasas*gramos)/100;
-		this.grasas_saturadas=(this.grasas_saturadas*gramos)/100;
-		this.hidratos=(this.hidratos*gramos)/100;
-		this.azucar=(this.azucar*gramos)/100;
-		this.proteinas=(this.proteinas*gramos)/100;
-		this.sal=(this.sal*gramos)/100;
-		this.calorias=(this.calorias*gramos)/100;
+		this.grasas = (this.grasas * gramos) / 100;
+		this.grasas_saturadas = (this.grasas_saturadas * gramos) / 100;
+		this.hidratos = (this.hidratos * gramos) / 100;
+		this.azucar = (this.azucar * gramos) / 100;
+		this.proteinas = (this.proteinas * gramos) / 100;
+		this.sal = (this.sal * gramos) / 100;
+		this.calorias = (this.calorias * gramos) / 100;
 	}
 
 	@Override
@@ -277,9 +288,5 @@ public class Alimento {
 				+ ", hidratos=" + hidratos + ", azucar=" + azucar + ", proteinas=" + proteinas + ", sal=" + sal
 				+ ", calorias=" + calorias + "]";
 	}
-
-	
-	
-	
 
 }

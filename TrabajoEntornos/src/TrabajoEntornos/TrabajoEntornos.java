@@ -9,6 +9,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JCheckBox;
 import java.awt.GridBagLayout;
 import java.awt.Image;
@@ -22,6 +23,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.plaf.basic.BasicGraphicsUtils;
 
 import java.awt.Color;
+import java.awt.Component;
+
 import javax.swing.border.BevelBorder;
 import javax.swing.UIManager;
 import javax.swing.WindowConstants;
@@ -43,7 +46,7 @@ import java.awt.event.ActionEvent;
 
 public class TrabajoEntornos extends JPanel {
 
-	private static Alimento patatasFritas = new Alimento("Patatas Fritas", 7.47, 10.96, 49.74, 4.12, 6.56, 0.76, 273);
+	private static Alimento patatasFritas = new Alimento("Patatas Fritas", 7.47, 6.96, 49.74, 4.12, 6.56, 0.76, 273);
 	private static Alimento alitasDePollo = new Alimento("Alitas de Pollo", 19.3, 5.4, 0, 0, 26.64, 404, 288);
 	private static Alimento heladoVainilla = new Alimento("Helado de Vainilla", 11, 6.79, 23.6, 21.22, 33.5, 80, 201);
 	private static Alimento gominolas = new Alimento("Gominolas", 0.05, 0, 93.55, 70, 0, 50, 375);
@@ -85,6 +88,7 @@ public class TrabajoEntornos extends JPanel {
 	private JLabel lblGr_7;
 	private JLabel lblGr_8;
 	private JLabel lblGr_9;
+	protected JPanel panel = new JPanel();
 
 	public TrabajoEntornos() {
 
@@ -336,8 +340,19 @@ public class TrabajoEntornos extends JPanel {
 						Double.parseDouble(textField_11.getText()), Double.parseDouble(textField_13.getText()),
 						Double.parseDouble(textField_15.getText()), Double.parseDouble(textField_19.getText()),
 						Double.parseDouble(textField_21.getText()), Double.parseDouble(textField_23.getText()));
+					
+		if (Double.parseDouble(textField_11.getText())>Double.parseDouble(textField_9.getText()) || 
+				Double.parseDouble(textField_15.getText())>Double.parseDouble(textField_13.getText())  ) {
+						
+			JOptionPane.showMessageDialog(panel,
+			        "No se ha podido añadir el alimento, corrige los errores por favor ",
+			        "Warning",
+			        JOptionPane.WARNING_MESSAGE);
 
+					}
+		else {
 				listaAlimentos.add(a1);
+		}
 				textField_16.setText("");
 				textField_9.setText("");
 				textField_11.setText("");
