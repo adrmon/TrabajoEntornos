@@ -48,18 +48,15 @@ import java.beans.PropertyChangeEvent;
 
 public class TrabajoEntornos extends JPanel {
 
-	private static Alimento patatasFritas = new Alimento("Patatas Fritas", 7.47, 6.96, 49.74, 4.12, 6.56, 0.76, 273);
-	private static Alimento alitasDePollo = new Alimento("Alitas de Pollo", 19.3, 5.4, 0, 0, 26.64, 404, 288);
-	private static Alimento heladoVainilla = new Alimento("Helado de Vainilla", 11, 6.79, 23.6, 21.22, 33.5, 80, 201);
-	private static Alimento gominolas = new Alimento("Gominolas", 0.05, 0, 93.55, 70, 0, 50, 375);
-	private static Alimento brocoli = new Alimento("Brocoli", 0.37, 0.039, 6.64, 1.7, 2.82, 0.33, 34);
-	private static Alimento coliflor = new Alimento("Coliflor", 0.1, 0.032, 5.3, 2.4, 1.98, 30, 25);
-	// private static Alimento chocolate = new Alimento("chocolate", 0.05, 0, 93.55,
-	// 70, 0, 50, 375);
-	// private static Alimento merluza = new Alimento("Brocoli", 0.37, 0.039, 6.64,
-	// 1.7, 2.82, 33, 34);
-	// private static Alimento piza = new Alimento("Coliflor", 0.1, 0.032, 5.3, 2.4,
-	// 1.98, 30, 25);
+	private static Alimento patatasFritas = new Alimento("Patatas Fritas", 14.03, 3.2, 35.62, 0.59, 3.48, 0.76, 273);
+	private static Alimento alitasDePollo = new Alimento("Alitas de Pollo", 22.62, 5.9, 0, 0, 27.01, 1.07, 318);
+	private static Alimento heladoVainilla = new Alimento("Helado de Vainilla", 11, 6.79, 23.6, 21.22, 3.5, 0.2, 201);
+	private static Alimento gominolas = new Alimento("Gominolas", 0.05, 0, 93.55, 70, 0, 0.12, 375);
+	private static Alimento brocoli = new Alimento("Brocoli", 0.37, 0.039, 6.64, 1.7, 2.82, 0.08, 34);
+	private static Alimento coliflor = new Alimento("Coliflor", 0.1, 0.032, 5.3, 2.4, 1.98, 0.08, 25);
+	private static Alimento chocolate = new Alimento("Chocolate", 29.66, 14.23, 59.4,51.5, 7.65, 0.2, 535);
+	private static Alimento merluza = new Alimento("Merluza", 4.38, 0.82, 0.41, 0.09, 21.38, 1.02, 132);
+	private static Alimento huevo = new Alimento("Huevos", 9.94, 3.1, 0.77, 0.77, 12.58, 0.35, 147);
 	private static ArrayList<Alimento> listaAlimentos;
 
 	private JFrame frmValoracion;
@@ -183,8 +180,18 @@ public class TrabajoEntornos extends JPanel {
 						String.valueOf(coliflor.getGrasas_saturadas()), String.valueOf(coliflor.getHidratos()),
 						String.valueOf(coliflor.getAzucar()), String.valueOf(coliflor.getProteinas()),
 						String.valueOf(coliflor.getSal()), String.valueOf(coliflor.getCalorias()) },
-				{ null, null, null, null, null, null, null, null }, { null, null, null, null, null, null, null, null },
-				{ null, null, null, null, null, null, null, null }, },
+				{ String.valueOf(chocolate.getNombre()), String.valueOf(chocolate.getGrasas()),
+							String.valueOf(chocolate.getGrasas_saturadas()), String.valueOf(chocolate.getHidratos()),
+							String.valueOf(chocolate.getAzucar()), String.valueOf(chocolate.getProteinas()),
+							String.valueOf(chocolate.getSal()), String.valueOf(chocolate.getCalorias()) }, 
+				{ String.valueOf(merluza.getNombre()), String.valueOf(merluza.getGrasas()),
+								String.valueOf(merluza.getGrasas_saturadas()), String.valueOf(merluza.getHidratos()),
+								String.valueOf(merluza.getAzucar()), String.valueOf(merluza.getProteinas()),
+								String.valueOf(merluza.getSal()), String.valueOf(merluza.getCalorias()) },
+				{String.valueOf(huevo.getNombre()), String.valueOf(huevo.getGrasas()),
+									String.valueOf(huevo.getGrasas_saturadas()), String.valueOf(huevo.getHidratos()),
+									String.valueOf(huevo.getAzucar()), String.valueOf(huevo.getProteinas()),
+									String.valueOf(huevo.getSal()), String.valueOf(huevo.getCalorias()) }, },
 				new String[] { "Nombre", "New column", "New column", "New column", "New column", "New column",
 						"New column", "New column" }) {
 			boolean[] columnEditables = new boolean[] { false, true, true, true, true, true, true, true };
@@ -226,9 +233,9 @@ public class TrabajoEntornos extends JPanel {
 				brocoli.calcularCantidadNutrientesTotales(Double.parseDouble(textField_4.getText()));
 				coliflor.calcularCantidadNutrientesTotales(Double.parseDouble(textField_5.getText()));
 
-				String resultado_ingesta_calorica_malsana = Alimento.calcularIngestaCaloricaMalsana(listaAlimentos);
-				String resultado_consumo_azucar = Alimento.calcularConsumoDeAzucar(listaAlimentos);
-				String resultado_consumo_sal = Alimento.calcularConsumoDiarioDeSal(listaAlimentos);
+				String resultado_ingesta_calorica_malsana = Metodo_Alimento.calcularIngestaCaloricaMalsana(listaAlimentos);
+				String resultado_consumo_azucar = Metodo_Alimento.calcularConsumoDeAzucar(listaAlimentos);
+				String resultado_consumo_sal = Metodo_Alimento.calcularConsumoDiarioDeSal(listaAlimentos);
 
 				textArea.append(resultado_ingesta_calorica_malsana + "\n");
 				textArea.append(resultado_consumo_azucar + "\n");
