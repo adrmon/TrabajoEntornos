@@ -35,6 +35,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
 
 /**
  * <h2>Interfaz</h2>
@@ -52,9 +54,12 @@ public class TrabajoEntornos extends JPanel {
 	private static Alimento gominolas = new Alimento("Gominolas", 0.05, 0, 93.55, 70, 0, 50, 375);
 	private static Alimento brocoli = new Alimento("Brocoli", 0.37, 0.039, 6.64, 1.7, 2.82, 0.33, 34);
 	private static Alimento coliflor = new Alimento("Coliflor", 0.1, 0.032, 5.3, 2.4, 1.98, 30, 25);
-	//private static Alimento chocolate = new Alimento("chocolate", 0.05, 0, 93.55, 70, 0, 50, 375);
-	//private static Alimento merluza = new Alimento("Brocoli", 0.37, 0.039, 6.64, 1.7, 2.82, 33, 34);
-	//private static Alimento piza = new Alimento("Coliflor", 0.1, 0.032, 5.3, 2.4, 1.98, 30, 25);
+	// private static Alimento chocolate = new Alimento("chocolate", 0.05, 0, 93.55,
+	// 70, 0, 50, 375);
+	// private static Alimento merluza = new Alimento("Brocoli", 0.37, 0.039, 6.64,
+	// 1.7, 2.82, 33, 34);
+	// private static Alimento piza = new Alimento("Coliflor", 0.1, 0.032, 5.3, 2.4,
+	// 1.98, 30, 25);
 	private static ArrayList<Alimento> listaAlimentos;
 
 	private JFrame frmValoracion;
@@ -149,7 +154,8 @@ public class TrabajoEntornos extends JPanel {
 		Object[][] data;
 
 		table.setModel(new DefaultTableModel(new Object[][] {
-				{ "Nombre", "Grasas (g)", "G Saturadas (g)", "Hidratos (g)", "Azucares (g)", "Proteinas (g)", "Sal (g)", "Calorias (g)" },
+				{ "Nombre", "Grasas (g)", "G Saturadas (g)", "Hidratos (g)", "Azucares (g)", "Proteinas (g)", "Sal (g)",
+						"Calorias (g)" },
 				{ String.valueOf(patatasFritas.getNombre()), String.valueOf(patatasFritas.getGrasas()),
 						String.valueOf(patatasFritas.getGrasas_saturadas()),
 						String.valueOf(patatasFritas.getHidratos()), String.valueOf(patatasFritas.getAzucar()),
@@ -195,7 +201,7 @@ public class TrabajoEntornos extends JPanel {
 		table.getColumnModel().getColumn(5).setMinWidth(40);
 		frmValoracion.getContentPane().setLayout(null);
 		frmValoracion.getContentPane().add(table);
-		
+
 		JTextArea textArea = new JTextArea();
 		textArea.setBorder(new LineBorder(UIManager.getColor("CheckBoxMenuItem.acceleratorForeground"), 3, true));
 		textArea.setEditable(false);
@@ -210,33 +216,29 @@ public class TrabajoEntornos extends JPanel {
 		JButton btnNewButton = new JButton("Valorar Dieta");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+
 				textArea.setText("");
-				
+
 				patatasFritas.calcularCantidadNutrientesTotales(Double.parseDouble(textField.getText()));
 				alitasDePollo.calcularCantidadNutrientesTotales(Double.parseDouble(textField_1.getText()));
 				heladoVainilla.calcularCantidadNutrientesTotales(Double.parseDouble(textField_2.getText()));
 				gominolas.calcularCantidadNutrientesTotales(Double.parseDouble(textField_3.getText()));
 				brocoli.calcularCantidadNutrientesTotales(Double.parseDouble(textField_4.getText()));
 				coliflor.calcularCantidadNutrientesTotales(Double.parseDouble(textField_5.getText()));
-				
-				String resultado_ingesta_calorica_malsana= Alimento.calcularIngestaCaloricaMalsana(listaAlimentos);
-				String resultado_consumo_azucar=Alimento.calcularConsumoDeAzucar(listaAlimentos);
-				String resultado_consumo_sal=Alimento.calcularConsumoDiarioDeSal(listaAlimentos);
-				
-				textArea.append(resultado_ingesta_calorica_malsana+"\n");
-				textArea.append(resultado_consumo_azucar+"\n");
-				textArea.append(resultado_consumo_sal+"\n");
-				
-				
+
+				String resultado_ingesta_calorica_malsana = Alimento.calcularIngestaCaloricaMalsana(listaAlimentos);
+				String resultado_consumo_azucar = Alimento.calcularConsumoDeAzucar(listaAlimentos);
+				String resultado_consumo_sal = Alimento.calcularConsumoDiarioDeSal(listaAlimentos);
+
+				textArea.append(resultado_ingesta_calorica_malsana + "\n");
+				textArea.append(resultado_consumo_azucar + "\n");
+				textArea.append(resultado_consumo_sal + "\n");
 
 			}
 		});
 		btnNewButton.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
 		btnNewButton.setBounds(276, 533, 139, 27);
 		frmValoracion.getContentPane().add(btnNewButton);
-
-		
 
 		textField = new JTextField();
 		textField.setText("0");
@@ -307,13 +309,6 @@ public class TrabajoEntornos extends JPanel {
 		textField_16.setBounds(53, 405, 95, 34);
 		frmValoracion.getContentPane().add(textField_16);
 
-		textField_17 = new JTextField();
-		textField_17.setText("0");
-		textField_17.setColumns(10);
-		textField_17.setBorder(new LineBorder(Color.GRAY, 3, true));
-		textField_17.setBounds(841, 411, 76, 20);
-		frmValoracion.getContentPane().add(textField_17);
-
 		JLabel lblAadeTusPropios = new JLabel("Añade tus propios alimentos y escribe la cantidad en gramos.");
 		lblAadeTusPropios.setBounds(195, 378, 455, 17);
 		frmValoracion.getContentPane().add(lblAadeTusPropios);
@@ -356,41 +351,53 @@ public class TrabajoEntornos extends JPanel {
 		JButton botonadd = new JButton("Añadir");
 		botonadd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Alimento a1 = new Alimento(textField_16.getText(), Double.parseDouble(textField_9.getText()),
-						Double.parseDouble(textField_11.getText()), Double.parseDouble(textField_13.getText()),
-						Double.parseDouble(textField_15.getText()), Double.parseDouble(textField_19.getText()),
-						Double.parseDouble(textField_21.getText()), Double.parseDouble(textField_23.getText()));
-					
-		if (Double.parseDouble(textField_11.getText())>Double.parseDouble(textField_9.getText()) || 
-				Double.parseDouble(textField_15.getText())>Double.parseDouble(textField_13.getText())  ) {
-						
-			JOptionPane.showMessageDialog(panel,
-			        "No se ha podido a�adir el alimento, corrige los errores por favor ",
-			        "Warning",
-			        JOptionPane.WARNING_MESSAGE);
+				try {
+					Alimento a1 = new Alimento(textField_16.getText(), Double.parseDouble(textField_9.getText()),
+							Double.parseDouble(textField_11.getText()), Double.parseDouble(textField_13.getText()),
+							Double.parseDouble(textField_15.getText()), Double.parseDouble(textField_19.getText()),
+							Double.parseDouble(textField_21.getText()), Double.parseDouble(textField_23.getText()));
 
+					if (Double.parseDouble(textField_11.getText()) > Double.parseDouble(textField_9.getText()) || Double
+							.parseDouble(textField_15.getText()) > Double.parseDouble(textField_13.getText())) {
+
+						JOptionPane.showMessageDialog(panel,
+								"No se ha podido a�adir el alimento, corrige los errores por favor ", "Warning",
+								JOptionPane.WARNING_MESSAGE);
+
+					} else {
+						// FALTA METER EL METODO PARA CALCULAR LA CANTIDAD DE GRAMOS INTRODUCIDA
+						a1.calcularCantidadNutrientesTotales(Double.parseDouble(textField_17.getText()));
+						listaAlimentos.add(a1);
 					}
-		else {
-			// FALTA METER EL METODO PARA CALCULAR LA CANTIDAD DE GRAMOS INTRODUCIDA
-			a1.calcularCantidadNutrientesTotales(Double.parseDouble(textField_17.getText()));
-				listaAlimentos.add(a1);
-		}
-				textField_16.setText("");
-				textField_9.setText("");
-				textField_11.setText("");
-				textField_13.setText("");
-				textField_15.setText("");
-				textField_19.setText("");
-				textField_21.setText("");
-				textField_23.setText("");
-				
-				textField_17.setText("");
 
+					textField_16.setText("");
+					textField_9.setText("");
+					textField_11.setText("");
+					textField_13.setText("");
+					textField_15.setText("");
+					textField_19.setText("");
+					textField_21.setText("");
+					textField_23.setText("");
+
+					textField_17.setText("");
+				} catch (NumberFormatException ex) {
+					JOptionPane.showMessageDialog(panel, "No puede haber campos vacios. ", "Warning",
+							JOptionPane.WARNING_MESSAGE);
+				}
+				
 			}
 		});
+
 		botonadd.setBorder(new LineBorder(new Color(0, 128, 0), 3, true));
 		botonadd.setBounds(53, 483, 139, 27);
 		frmValoracion.getContentPane().add(botonadd);
+
+		textField_17 = new JTextField();
+		textField_17.setText("0");
+		textField_17.setColumns(10);
+		textField_17.setBorder(new LineBorder(Color.GRAY, 3, true));
+		textField_17.setBounds(841, 411, 76, 20);
+		frmValoracion.getContentPane().add(textField_17);
 
 		lblGr = new JLabel("g");
 		lblGr.setBounds(926, 80, 60, 17);
