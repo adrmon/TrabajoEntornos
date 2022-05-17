@@ -152,7 +152,7 @@ public class TrabajoEntornos extends JPanel {
 
 		table.setModel(new DefaultTableModel(new Object[][] {
 				{ "Nombre", "Grasas (g)", "G Saturadas (g)", "Hidratos (g)", "Azucares (g)", "Proteinas (g)", "Sal (g)",
-						"Calorias (g)" },
+						"Calorias (cal)" },
 				{ String.valueOf(patatasFritas.getNombre()), String.valueOf(patatasFritas.getGrasas()),
 						String.valueOf(patatasFritas.getGrasas_saturadas()),
 						String.valueOf(patatasFritas.getHidratos()), String.valueOf(patatasFritas.getAzucar()),
