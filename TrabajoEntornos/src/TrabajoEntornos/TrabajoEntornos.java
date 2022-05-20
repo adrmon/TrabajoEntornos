@@ -62,24 +62,24 @@ public class TrabajoEntornos extends JPanel {
 	private JFrame frmValoracion;
 	private JTable table;
 	private JLabel lblSeleccionaLosAlimentos;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_16;
-	private JTextField textField_17;
-	private JTextField textField_9;
-	private JTextField textField_11;
-	private JTextField textField_15;
-	private JTextField textField_19;
-	private JTextField textField_21;
-	private JTextField textField_23;
-	private JTextField textField_13;
+	private JTextField total_patatas_txt;
+	private JTextField total_alitas_txt;
+	private JTextField total_helado_txt;
+	private JTextField total_gominolas_txt;
+	private JTextField total_brocoli_txt;
+	private JTextField total_coliflor_txt;
+	private JTextField total_chocolate_txt;
+	private JTextField total_merluza_txt;
+	private JTextField total_huevos_txt;
+	private JTextField añadir_nombre_txt;
+	private JTextField total_alimento_txt;
+	private JTextField añadir_grasas_txt;
+	private JTextField añadir_saturadas_txt;
+	private JTextField añadir_azucar_txt;
+	private JTextField añadir_proteinas_txt;
+	private JTextField añadir_sal_txt;
+	private JTextField añadir_calorias_txt;
+	private JTextField añadir_hidratos_txt;
 	private JLabel lblGr;
 	private JLabel lblGr_1;
 	private JLabel lblGr_2;
@@ -153,45 +153,45 @@ public class TrabajoEntornos extends JPanel {
 		table.setModel(new DefaultTableModel(new Object[][] {
 				{ "Nombre", "Grasas (g)", "G Saturadas (g)", "Hidratos (g)", "Azucares (g)", "Proteinas (g)", "Sal (g)",
 						"Calorias (cal)" },
-				{ String.valueOf(patatasFritas.getNombre()), String.valueOf(patatasFritas.getGrasas()),
-						String.valueOf(patatasFritas.getGrasas_saturadas()),
-						String.valueOf(patatasFritas.getHidratos()), String.valueOf(patatasFritas.getAzucar()),
-						String.valueOf(patatasFritas.getProteinas()), String.valueOf(patatasFritas.getSal()),
-						String.valueOf(patatasFritas.getCalorias()) },
-				{ String.valueOf(alitasDePollo.getNombre()), String.valueOf(alitasDePollo.getGrasas()),
-						String.valueOf(alitasDePollo.getGrasas_saturadas()),
-						String.valueOf(alitasDePollo.getHidratos()), String.valueOf(alitasDePollo.getAzucar()),
-						String.valueOf(alitasDePollo.getProteinas()), String.valueOf(alitasDePollo.getSal()),
-						String.valueOf(alitasDePollo.getCalorias()) },
-				{ String.valueOf(heladoVainilla.getNombre()), String.valueOf(heladoVainilla.getGrasas()),
-						String.valueOf(heladoVainilla.getGrasas_saturadas()),
-						String.valueOf(heladoVainilla.getHidratos()), String.valueOf(heladoVainilla.getAzucar()),
-						String.valueOf(heladoVainilla.getProteinas()), String.valueOf(heladoVainilla.getSal()),
-						String.valueOf(heladoVainilla.getCalorias()) },
-				{ String.valueOf(gominolas.getNombre()), String.valueOf(gominolas.getGrasas()),
-						String.valueOf(gominolas.getGrasas_saturadas()), String.valueOf(gominolas.getHidratos()),
-						String.valueOf(gominolas.getAzucar()), String.valueOf(gominolas.getProteinas()),
-						String.valueOf(gominolas.getSal()), String.valueOf(gominolas.getCalorias()) },
-				{ String.valueOf(brocoli.getNombre()), String.valueOf(brocoli.getGrasas()),
-						String.valueOf(brocoli.getGrasas_saturadas()), String.valueOf(brocoli.getHidratos()),
-						String.valueOf(brocoli.getAzucar()), String.valueOf(brocoli.getProteinas()),
-						String.valueOf(brocoli.getSal()), String.valueOf(brocoli.getCalorias()) },
-				{ String.valueOf(coliflor.getNombre()), String.valueOf(coliflor.getGrasas()),
-						String.valueOf(coliflor.getGrasas_saturadas()), String.valueOf(coliflor.getHidratos()),
-						String.valueOf(coliflor.getAzucar()), String.valueOf(coliflor.getProteinas()),
-						String.valueOf(coliflor.getSal()), String.valueOf(coliflor.getCalorias()) },
-				{ String.valueOf(chocolate.getNombre()), String.valueOf(chocolate.getGrasas()),
-							String.valueOf(chocolate.getGrasas_saturadas()), String.valueOf(chocolate.getHidratos()),
-							String.valueOf(chocolate.getAzucar()), String.valueOf(chocolate.getProteinas()),
-							String.valueOf(chocolate.getSal()), String.valueOf(chocolate.getCalorias()) }, 
-				{ String.valueOf(merluza.getNombre()), String.valueOf(merluza.getGrasas()),
-								String.valueOf(merluza.getGrasas_saturadas()), String.valueOf(merluza.getHidratos()),
-								String.valueOf(merluza.getAzucar()), String.valueOf(merluza.getProteinas()),
-								String.valueOf(merluza.getSal()), String.valueOf(merluza.getCalorias()) },
-				{String.valueOf(huevo.getNombre()), String.valueOf(huevo.getGrasas()),
-									String.valueOf(huevo.getGrasas_saturadas()), String.valueOf(huevo.getHidratos()),
-									String.valueOf(huevo.getAzucar()), String.valueOf(huevo.getProteinas()),
-									String.valueOf(huevo.getSal()), String.valueOf(huevo.getCalorias()) }, },
+				{ patatasFritas.getNombre(), patatasFritas.getGrasas(),
+						patatasFritas.getGrasas_saturadas(),
+						patatasFritas.getHidratos(), patatasFritas.getAzucar(),
+						patatasFritas.getProteinas(), patatasFritas.getSal(),
+						patatasFritas.getCalorias() },
+				{ alitasDePollo.getNombre(), alitasDePollo.getGrasas(),
+						alitasDePollo.getGrasas_saturadas(),
+						alitasDePollo.getHidratos(), alitasDePollo.getAzucar(),
+						alitasDePollo.getProteinas(), alitasDePollo.getSal(),
+						alitasDePollo.getCalorias() },
+				{ heladoVainilla.getNombre(), heladoVainilla.getGrasas(),
+						heladoVainilla.getGrasas_saturadas(),
+						heladoVainilla.getHidratos(), heladoVainilla.getAzucar(),
+						heladoVainilla.getProteinas(), heladoVainilla.getSal(),
+						heladoVainilla.getCalorias() },
+				{ gominolas.getNombre(), gominolas.getGrasas(),
+						gominolas.getGrasas_saturadas(), gominolas.getHidratos(),
+						gominolas.getAzucar(), gominolas.getProteinas(),
+						gominolas.getSal(), gominolas.getCalorias() },
+				{ brocoli.getNombre(), brocoli.getGrasas(),
+						brocoli.getGrasas_saturadas(), brocoli.getHidratos(),
+						brocoli.getAzucar(), brocoli.getProteinas(),
+						brocoli.getSal(), brocoli.getCalorias() },
+				{ coliflor.getNombre(), coliflor.getGrasas(),
+						coliflor.getGrasas_saturadas(), coliflor.getHidratos(),
+						coliflor.getAzucar(), coliflor.getProteinas(),
+						coliflor.getSal(), coliflor.getCalorias() },
+				{ chocolate.getNombre(), chocolate.getGrasas(),
+							chocolate.getGrasas_saturadas(), chocolate.getHidratos(),
+							chocolate.getAzucar(), chocolate.getProteinas(),
+						chocolate.getSal(), chocolate.getCalorias() }, 
+				{ merluza.getNombre(),merluza.getGrasas(),
+								merluza.getGrasas_saturadas(), merluza.getHidratos(),
+								merluza.getAzucar(), merluza.getProteinas(),
+								merluza.getSal(), merluza.getCalorias() },
+				{huevo.getNombre(), huevo.getGrasas(),
+									huevo.getGrasas_saturadas(), huevo.getHidratos(),
+									huevo.getAzucar(), huevo.getProteinas(),
+									huevo.getSal(), huevo.getCalorias() }, },
 				new String[] { "Nombre", "New column", "New column", "New column", "New column", "New column",
 						"New column", "New column" }) {
 			boolean[] columnEditables = new boolean[] { false, true, true, true, true, true, true, true };
@@ -220,18 +220,18 @@ public class TrabajoEntornos extends JPanel {
 		lblSeleccionaLosAlimentos.setBounds(195, 12, 455, 17);
 		frmValoracion.getContentPane().add(lblSeleccionaLosAlimentos);
 
-		JButton btnNewButton = new JButton("Valorar Dieta");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnValorarDieta = new JButton("Valorar Dieta");
+		btnValorarDieta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
 				textArea.setText("");
 
-				patatasFritas.calcularCantidadNutrientesTotales(Double.parseDouble(textField.getText()));
-				alitasDePollo.calcularCantidadNutrientesTotales(Double.parseDouble(textField_1.getText()));
-				heladoVainilla.calcularCantidadNutrientesTotales(Double.parseDouble(textField_2.getText()));
-				gominolas.calcularCantidadNutrientesTotales(Double.parseDouble(textField_3.getText()));
-				brocoli.calcularCantidadNutrientesTotales(Double.parseDouble(textField_4.getText()));
-				coliflor.calcularCantidadNutrientesTotales(Double.parseDouble(textField_5.getText()));
+				patatasFritas.calcularCantidadNutrientesTotales(Double.parseDouble(total_patatas_txt.getText()));
+				alitasDePollo.calcularCantidadNutrientesTotales(Double.parseDouble(total_alitas_txt.getText()));
+				heladoVainilla.calcularCantidadNutrientesTotales(Double.parseDouble(total_helado_txt.getText()));
+				gominolas.calcularCantidadNutrientesTotales(Double.parseDouble(total_gominolas_txt.getText()));
+				brocoli.calcularCantidadNutrientesTotales(Double.parseDouble(total_brocoli_txt.getText()));
+				coliflor.calcularCantidadNutrientesTotales(Double.parseDouble(total_coliflor_txt.getText()));
 
 				String resultado_ingesta_calorica_malsana = Metodo_Alimento.calcularIngestaCaloricaMalsana(listaAlimentos);
 				String resultado_consumo_azucar = Metodo_Alimento.calcularConsumoDeAzucar(listaAlimentos);
@@ -243,150 +243,150 @@ public class TrabajoEntornos extends JPanel {
 
 			}
 		});
-		btnNewButton.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
-		btnNewButton.setBounds(276, 533, 139, 27);
-		frmValoracion.getContentPane().add(btnNewButton);
+		btnValorarDieta.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
+		btnValorarDieta.setBounds(276, 533, 139, 27);
+		frmValoracion.getContentPane().add(btnValorarDieta);
 
-		textField = new JTextField();
-		textField.setText("0");
+		total_patatas_txt = new JTextField();
+		total_patatas_txt.setText("0");
 
-		textField.setBorder(new LineBorder(Color.GRAY, 3, true));
-		textField.setBounds(841, 78, 76, 20);
-		frmValoracion.getContentPane().add(textField);
-		textField.setColumns(10);
+		total_patatas_txt.setBorder(new LineBorder(Color.GRAY, 3, true));
+		total_patatas_txt.setBounds(841, 78, 76, 20);
+		frmValoracion.getContentPane().add(total_patatas_txt);
+		total_patatas_txt.setColumns(10);
 
-		textField_1 = new JTextField();
-		textField_1.setText("0");
-		textField_1.setBorder(new LineBorder(new Color(128, 128, 128), 3, true));
-		textField_1.setColumns(10);
-		textField_1.setBounds(841, 108, 76, 20);
-		frmValoracion.getContentPane().add(textField_1);
+		total_alitas_txt = new JTextField();
+		total_alitas_txt.setText("0");
+		total_alitas_txt.setBorder(new LineBorder(new Color(128, 128, 128), 3, true));
+		total_alitas_txt.setColumns(10);
+		total_alitas_txt.setBounds(841, 108, 76, 20);
+		frmValoracion.getContentPane().add(total_alitas_txt);
 
-		textField_2 = new JTextField();
-		textField_2.setText("0");
-		textField_2.setBorder(new LineBorder(Color.GRAY, 3, true));
-		textField_2.setColumns(10);
-		textField_2.setBounds(841, 143, 76, 20);
-		frmValoracion.getContentPane().add(textField_2);
+		total_helado_txt = new JTextField();
+		total_helado_txt.setText("0");
+		total_helado_txt.setBorder(new LineBorder(Color.GRAY, 3, true));
+		total_helado_txt.setColumns(10);
+		total_helado_txt.setBounds(841, 143, 76, 20);
+		frmValoracion.getContentPane().add(total_helado_txt);
 
-		textField_3 = new JTextField();
-		textField_3.setText("0");
-		textField_3.setBorder(new LineBorder(Color.GRAY, 3, true));
-		textField_3.setColumns(10);
-		textField_3.setBounds(841, 178, 76, 20);
-		frmValoracion.getContentPane().add(textField_3);
+		total_gominolas_txt = new JTextField();
+		total_gominolas_txt.setText("0");
+		total_gominolas_txt.setBorder(new LineBorder(Color.GRAY, 3, true));
+		total_gominolas_txt.setColumns(10);
+		total_gominolas_txt.setBounds(841, 178, 76, 20);
+		frmValoracion.getContentPane().add(total_gominolas_txt);
 
-		textField_4 = new JTextField();
-		textField_4.setText("0");
-		textField_4.setBorder(new LineBorder(Color.GRAY, 3, true));
-		textField_4.setColumns(10);
-		textField_4.setBounds(841, 208, 76, 20);
-		frmValoracion.getContentPane().add(textField_4);
+		total_brocoli_txt = new JTextField();
+		total_brocoli_txt.setText("0");
+		total_brocoli_txt.setBorder(new LineBorder(Color.GRAY, 3, true));
+		total_brocoli_txt.setColumns(10);
+		total_brocoli_txt.setBounds(841, 208, 76, 20);
+		frmValoracion.getContentPane().add(total_brocoli_txt);
 
-		textField_5 = new JTextField();
-		textField_5.setText("0");
-		textField_5.setBorder(new LineBorder(Color.GRAY, 3, true));
-		textField_5.setColumns(10);
-		textField_5.setBounds(841, 243, 76, 20);
-		frmValoracion.getContentPane().add(textField_5);
+		total_coliflor_txt = new JTextField();
+		total_coliflor_txt.setText("0");
+		total_coliflor_txt.setBorder(new LineBorder(Color.GRAY, 3, true));
+		total_coliflor_txt.setColumns(10);
+		total_coliflor_txt.setBounds(841, 243, 76, 20);
+		frmValoracion.getContentPane().add(total_coliflor_txt);
 
-		textField_6 = new JTextField();
-		textField_6.setText("0");
-		textField_6.setBorder(new LineBorder(Color.GRAY, 3, true));
-		textField_6.setColumns(10);
-		textField_6.setBounds(841, 273, 76, 20);
-		frmValoracion.getContentPane().add(textField_6);
+		total_chocolate_txt = new JTextField();
+		total_chocolate_txt.setText("0");
+		total_chocolate_txt.setBorder(new LineBorder(Color.GRAY, 3, true));
+		total_chocolate_txt.setColumns(10);
+		total_chocolate_txt.setBounds(841, 273, 76, 20);
+		frmValoracion.getContentPane().add(total_chocolate_txt);
 
-		textField_7 = new JTextField();
-		textField_7.setText("0");
-		textField_7.setBorder(new LineBorder(Color.GRAY, 3, true));
-		textField_7.setColumns(10);
-		textField_7.setBounds(841, 308, 76, 20);
-		frmValoracion.getContentPane().add(textField_7);
+		total_merluza_txt = new JTextField();
+		total_merluza_txt.setText("0");
+		total_merluza_txt.setBorder(new LineBorder(Color.GRAY, 3, true));
+		total_merluza_txt.setColumns(10);
+		total_merluza_txt.setBounds(841, 308, 76, 20);
+		frmValoracion.getContentPane().add(total_merluza_txt);
 
-		textField_8 = new JTextField();
-		textField_8.setText("0");
-		textField_8.setColumns(10);
-		textField_8.setBorder(new LineBorder(Color.GRAY, 3, true));
-		textField_8.setBounds(841, 338, 76, 20);
-		frmValoracion.getContentPane().add(textField_8);
+		total_huevos_txt = new JTextField();
+		total_huevos_txt.setText("0");
+		total_huevos_txt.setColumns(10);
+		total_huevos_txt.setBorder(new LineBorder(Color.GRAY, 3, true));
+		total_huevos_txt.setBounds(841, 338, 76, 20);
+		frmValoracion.getContentPane().add(total_huevos_txt);
 
-		textField_16 = new JTextField();
-		textField_16.setColumns(10);
-		textField_16.setBounds(53, 405, 95, 34);
-		frmValoracion.getContentPane().add(textField_16);
+		añadir_nombre_txt = new JTextField();
+		añadir_nombre_txt.setColumns(10);
+		añadir_nombre_txt.setBounds(53, 405, 95, 34);
+		frmValoracion.getContentPane().add(añadir_nombre_txt);
 
 		JLabel lblAadeTusPropios = new JLabel("Añade tus propios alimentos y escribe la cantidad en gramos.");
 		lblAadeTusPropios.setBounds(195, 378, 455, 17);
 		frmValoracion.getContentPane().add(lblAadeTusPropios);
 
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
-		textField_9.setBounds(148, 405, 95, 34);
-		frmValoracion.getContentPane().add(textField_9);
+		añadir_grasas_txt = new JTextField();
+		añadir_grasas_txt.setColumns(10);
+		añadir_grasas_txt.setBounds(148, 405, 95, 34);
+		frmValoracion.getContentPane().add(añadir_grasas_txt);
 
-		textField_11 = new JTextField();
-		textField_11.setColumns(10);
-		textField_11.setBounds(242, 405, 95, 34);
-		frmValoracion.getContentPane().add(textField_11);
+		añadir_saturadas_txt = new JTextField();
+		añadir_saturadas_txt.setColumns(10);
+		añadir_saturadas_txt.setBounds(242, 405, 95, 34);
+		frmValoracion.getContentPane().add(añadir_saturadas_txt);
 
-		textField_15 = new JTextField();
-		textField_15.setColumns(10);
-		textField_15.setBounds(434, 405, 95, 34);
-		frmValoracion.getContentPane().add(textField_15);
+		añadir_azucar_txt = new JTextField();
+		añadir_azucar_txt.setColumns(10);
+		añadir_azucar_txt.setBounds(434, 405, 95, 34);
+		frmValoracion.getContentPane().add(añadir_azucar_txt);
 
-		textField_19 = new JTextField();
-		textField_19.setColumns(10);
-		textField_19.setBounds(530, 405, 95, 34);
-		frmValoracion.getContentPane().add(textField_19);
+		añadir_proteinas_txt = new JTextField();
+		añadir_proteinas_txt.setColumns(10);
+		añadir_proteinas_txt.setBounds(530, 405, 95, 34);
+		frmValoracion.getContentPane().add(añadir_proteinas_txt);
 
-		textField_21 = new JTextField();
-		textField_21.setColumns(10);
-		textField_21.setBounds(626, 405, 95, 34);
-		frmValoracion.getContentPane().add(textField_21);
+		añadir_sal_txt = new JTextField();
+		añadir_sal_txt.setColumns(10);
+		añadir_sal_txt.setBounds(626, 405, 95, 34);
+		frmValoracion.getContentPane().add(añadir_sal_txt);
 
-		textField_23 = new JTextField();
-		textField_23.setColumns(10);
-		textField_23.setBounds(721, 405, 95, 34);
-		frmValoracion.getContentPane().add(textField_23);
+		añadir_calorias_txt = new JTextField();
+		añadir_calorias_txt.setColumns(10);
+		añadir_calorias_txt.setBounds(721, 405, 95, 34);
+		frmValoracion.getContentPane().add(añadir_calorias_txt);
 
-		textField_13 = new JTextField();
-		textField_13.setColumns(10);
-		textField_13.setBounds(338, 405, 95, 34);
-		frmValoracion.getContentPane().add(textField_13);
+		añadir_hidratos_txt = new JTextField();
+		añadir_hidratos_txt.setColumns(10);
+		añadir_hidratos_txt.setBounds(338, 405, 95, 34);
+		frmValoracion.getContentPane().add(añadir_hidratos_txt);
 
 		JButton botonadd = new JButton("Añadir");
 		botonadd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					Alimento a1 = new Alimento(textField_16.getText(), Double.parseDouble(textField_9.getText()),
-							Double.parseDouble(textField_11.getText()), Double.parseDouble(textField_13.getText()),
-							Double.parseDouble(textField_15.getText()), Double.parseDouble(textField_19.getText()),
-							Double.parseDouble(textField_21.getText()), Double.parseDouble(textField_23.getText()));
+					Alimento a1 = new Alimento(añadir_nombre_txt.getText(), Double.parseDouble(añadir_grasas_txt.getText()),
+							Double.parseDouble(añadir_saturadas_txt.getText()), Double.parseDouble(añadir_hidratos_txt.getText()),
+							Double.parseDouble(añadir_azucar_txt.getText()), Double.parseDouble(añadir_proteinas_txt.getText()),
+							Double.parseDouble(añadir_sal_txt.getText()), Double.parseDouble(añadir_calorias_txt.getText()));
 
-					if (Double.parseDouble(textField_11.getText()) > Double.parseDouble(textField_9.getText()) || Double
-							.parseDouble(textField_15.getText()) > Double.parseDouble(textField_13.getText())) {
+					if (Double.parseDouble(añadir_saturadas_txt.getText()) > Double.parseDouble(añadir_grasas_txt.getText()) || Double
+							.parseDouble(añadir_azucar_txt.getText()) > Double.parseDouble(añadir_hidratos_txt.getText())) {
 
 						JOptionPane.showMessageDialog(panel,
 								"No se ha podido a�adir el alimento, corrige los errores por favor ", "Warning",
 								JOptionPane.WARNING_MESSAGE);
 
 					} else {
-						// FALTA METER EL METODO PARA CALCULAR LA CANTIDAD DE GRAMOS INTRODUCIDA
-						a1.calcularCantidadNutrientesTotales(Double.parseDouble(textField_17.getText()));
+						
+						a1.calcularCantidadNutrientesTotales(Double.parseDouble(total_alimento_txt.getText()));
 						listaAlimentos.add(a1);
 					}
 
-					textField_16.setText("");
-					textField_9.setText("");
-					textField_11.setText("");
-					textField_13.setText("");
-					textField_15.setText("");
-					textField_19.setText("");
-					textField_21.setText("");
-					textField_23.setText("");
+					añadir_nombre_txt.setText("");
+					añadir_grasas_txt.setText("");
+					añadir_saturadas_txt.setText("");
+					añadir_hidratos_txt.setText("");
+					añadir_azucar_txt.setText("");
+					añadir_proteinas_txt.setText("");
+					añadir_sal_txt.setText("");
+					añadir_calorias_txt.setText("");
 
-					textField_17.setText("");
+					total_alimento_txt.setText("");
 				} catch (NumberFormatException ex) {
 					JOptionPane.showMessageDialog(panel, "No puede haber campos vacios. ", "Warning",
 							JOptionPane.WARNING_MESSAGE);
@@ -399,12 +399,12 @@ public class TrabajoEntornos extends JPanel {
 		botonadd.setBounds(53, 483, 139, 27);
 		frmValoracion.getContentPane().add(botonadd);
 
-		textField_17 = new JTextField();
-		textField_17.setText("0");
-		textField_17.setColumns(10);
-		textField_17.setBorder(new LineBorder(Color.GRAY, 3, true));
-		textField_17.setBounds(841, 411, 76, 20);
-		frmValoracion.getContentPane().add(textField_17);
+		total_alimento_txt = new JTextField();
+		total_alimento_txt.setText("0");
+		total_alimento_txt.setColumns(10);
+		total_alimento_txt.setBorder(new LineBorder(Color.GRAY, 3, true));
+		total_alimento_txt.setBounds(841, 411, 76, 20);
+		frmValoracion.getContentPane().add(total_alimento_txt);
 
 		lblGr = new JLabel("g");
 		lblGr.setBounds(926, 80, 60, 17);
