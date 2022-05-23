@@ -54,7 +54,7 @@ public class TrabajoEntornos extends JPanel {
 	private static Alimento gominolas = new Alimento("Gominolas", 0.05, 0, 93.55, 70, 0, 0.12, 375);
 	private static Alimento brocoli = new Alimento("Brocoli", 0.37, 0.039, 6.64, 1.7, 2.82, 0.08, 34);
 	private static Alimento coliflor = new Alimento("Coliflor", 0.1, 0.032, 5.3, 2.4, 1.98, 0.08, 25);
-	private static Alimento chocolate = new Alimento("Chocolate", 29.66, 14.23, 59.4,51.5, 7.65, 0.2, 535);
+	private static Alimento chocolate = new Alimento("Chocolate", 29.66, 14.23, 59.4, 51.5, 7.65, 0.2, 535);
 	private static Alimento merluza = new Alimento("Merluza", 4.38, 0.82, 0.41, 0.09, 21.38, 1.02, 132);
 	private static Alimento huevo = new Alimento("Huevos", 9.94, 3.1, 0.77, 0.77, 12.58, 0.35, 147);
 	private static ArrayList<Alimento> listaAlimentos;
@@ -150,56 +150,50 @@ public class TrabajoEntornos extends JPanel {
 
 		Object[][] data;
 
-		table.setModel(new DefaultTableModel(new Object[][] {
-				{ "Nombre", "Grasas (g)", "G Saturadas (g)", "Hidratos (g)", "Azucares (g)", "Proteinas (g)", "Sal (g)",
-						"Calorias (cal)" },
-				{ patatasFritas.getNombre(), patatasFritas.getGrasas(),
-						patatasFritas.getGrasas_saturadas(),
-						patatasFritas.getHidratos(), patatasFritas.getAzucar(),
-						patatasFritas.getProteinas(), patatasFritas.getSal(),
-						patatasFritas.getCalorias() },
-				{ alitasDePollo.getNombre(), alitasDePollo.getGrasas(),
-						alitasDePollo.getGrasas_saturadas(),
-						alitasDePollo.getHidratos(), alitasDePollo.getAzucar(),
-						alitasDePollo.getProteinas(), alitasDePollo.getSal(),
-						alitasDePollo.getCalorias() },
-				{ heladoVainilla.getNombre(), heladoVainilla.getGrasas(),
-						heladoVainilla.getGrasas_saturadas(),
-						heladoVainilla.getHidratos(), heladoVainilla.getAzucar(),
-						heladoVainilla.getProteinas(), heladoVainilla.getSal(),
-						heladoVainilla.getCalorias() },
-				{ gominolas.getNombre(), gominolas.getGrasas(),
-						gominolas.getGrasas_saturadas(), gominolas.getHidratos(),
-						gominolas.getAzucar(), gominolas.getProteinas(),
-						gominolas.getSal(), gominolas.getCalorias() },
-				{ brocoli.getNombre(), brocoli.getGrasas(),
-						brocoli.getGrasas_saturadas(), brocoli.getHidratos(),
-						brocoli.getAzucar(), brocoli.getProteinas(),
-						brocoli.getSal(), brocoli.getCalorias() },
-				{ coliflor.getNombre(), coliflor.getGrasas(),
-						coliflor.getGrasas_saturadas(), coliflor.getHidratos(),
-						coliflor.getAzucar(), coliflor.getProteinas(),
-						coliflor.getSal(), coliflor.getCalorias() },
-				{ chocolate.getNombre(), chocolate.getGrasas(),
-							chocolate.getGrasas_saturadas(), chocolate.getHidratos(),
-							chocolate.getAzucar(), chocolate.getProteinas(),
-						chocolate.getSal(), chocolate.getCalorias() }, 
-				{ merluza.getNombre(),merluza.getGrasas(),
-								merluza.getGrasas_saturadas(), merluza.getHidratos(),
-								merluza.getAzucar(), merluza.getProteinas(),
-								merluza.getSal(), merluza.getCalorias() },
-				{huevo.getNombre(), huevo.getGrasas(),
-									huevo.getGrasas_saturadas(), huevo.getHidratos(),
-									huevo.getAzucar(), huevo.getProteinas(),
-									huevo.getSal(), huevo.getCalorias() }, },
-				new String[] { "Nombre", "New column", "New column", "New column", "New column", "New column",
-						"New column", "New column" }) {
-			boolean[] columnEditables = new boolean[] { false, true, true, true, true, true, true, true };
+		table.setModel(
+				new DefaultTableModel(
+						new Object[][] {
+								{ "Nombre", "Grasas (g)", "G Saturadas (g)", "Hidratos (g)", "Azucares (g)",
+										"Proteinas (g)", "Sal (g)", "Calorias (cal)" },
+								{ patatasFritas.getNombre(), patatasFritas.getGrasas(),
+										patatasFritas.getGrasas_saturadas(), patatasFritas.getHidratos(),
+										patatasFritas.getAzucar(), patatasFritas.getProteinas(), patatasFritas.getSal(),
+										patatasFritas.getCalorias() },
+								{ alitasDePollo.getNombre(), alitasDePollo.getGrasas(),
+										alitasDePollo.getGrasas_saturadas(), alitasDePollo.getHidratos(),
+										alitasDePollo.getAzucar(), alitasDePollo.getProteinas(), alitasDePollo.getSal(),
+										alitasDePollo.getCalorias() },
+								{ heladoVainilla.getNombre(), heladoVainilla.getGrasas(),
+										heladoVainilla.getGrasas_saturadas(), heladoVainilla.getHidratos(),
+										heladoVainilla.getAzucar(), heladoVainilla.getProteinas(),
+										heladoVainilla.getSal(), heladoVainilla.getCalorias() },
+								{ gominolas.getNombre(), gominolas.getGrasas(), gominolas.getGrasas_saturadas(),
+										gominolas.getHidratos(), gominolas
+												.getAzucar(),
+										gominolas.getProteinas(), gominolas.getSal(), gominolas.getCalorias() },
+								{ brocoli.getNombre(), brocoli.getGrasas(), brocoli.getGrasas_saturadas(),
+										brocoli.getHidratos(), brocoli.getAzucar(), brocoli.getProteinas(),
+										brocoli.getSal(), brocoli.getCalorias() },
+								{ coliflor.getNombre(), coliflor.getGrasas(), coliflor.getGrasas_saturadas(),
+										coliflor.getHidratos(), coliflor.getAzucar(), coliflor.getProteinas(),
+										coliflor.getSal(), coliflor.getCalorias() },
+								{ chocolate.getNombre(), chocolate.getGrasas(), chocolate.getGrasas_saturadas(),
+										chocolate.getHidratos(), chocolate.getAzucar(), chocolate.getProteinas(),
+										chocolate.getSal(), chocolate.getCalorias() },
+								{ merluza.getNombre(), merluza.getGrasas(), merluza.getGrasas_saturadas(),
+										merluza.getHidratos(), merluza.getAzucar(), merluza.getProteinas(),
+										merluza.getSal(), merluza.getCalorias() },
+								{ huevo.getNombre(), huevo.getGrasas(), huevo.getGrasas_saturadas(),
+										huevo.getHidratos(), huevo.getAzucar(), huevo.getProteinas(), huevo.getSal(),
+										huevo.getCalorias() }, },
+						new String[] { "Nombre", "New column", "New column", "New column", "New column", "New column",
+								"New column", "New column" }) {
+					boolean[] columnEditables = new boolean[] { false, true, true, true, true, true, true, true };
 
-			public boolean isCellEditable(int row, int column) {
-				return columnEditables[column];
-			}
-		});
+					public boolean isCellEditable(int row, int column) {
+						return columnEditables[column];
+					}
+				});
 		table.getColumnModel().getColumn(0).setResizable(false);
 		table.getColumnModel().getColumn(1).setMinWidth(40);
 		table.getColumnModel().getColumn(2).setMinWidth(40);
@@ -223,24 +217,28 @@ public class TrabajoEntornos extends JPanel {
 		JButton btnValorarDieta = new JButton("Valorar Dieta");
 		btnValorarDieta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				try {
+					textArea.setText("");
 
-				textArea.setText("");
+					patatasFritas.calcularCantidadNutrientesTotales(Double.parseDouble(total_patatas_txt.getText()));
+					alitasDePollo.calcularCantidadNutrientesTotales(Double.parseDouble(total_alitas_txt.getText()));
+					heladoVainilla.calcularCantidadNutrientesTotales(Double.parseDouble(total_helado_txt.getText()));
+					gominolas.calcularCantidadNutrientesTotales(Double.parseDouble(total_gominolas_txt.getText()));
+					brocoli.calcularCantidadNutrientesTotales(Double.parseDouble(total_brocoli_txt.getText()));
+					coliflor.calcularCantidadNutrientesTotales(Double.parseDouble(total_coliflor_txt.getText()));
 
-				patatasFritas.calcularCantidadNutrientesTotales(Double.parseDouble(total_patatas_txt.getText()));
-				alitasDePollo.calcularCantidadNutrientesTotales(Double.parseDouble(total_alitas_txt.getText()));
-				heladoVainilla.calcularCantidadNutrientesTotales(Double.parseDouble(total_helado_txt.getText()));
-				gominolas.calcularCantidadNutrientesTotales(Double.parseDouble(total_gominolas_txt.getText()));
-				brocoli.calcularCantidadNutrientesTotales(Double.parseDouble(total_brocoli_txt.getText()));
-				coliflor.calcularCantidadNutrientesTotales(Double.parseDouble(total_coliflor_txt.getText()));
+					String resultado_ingesta_calorica_malsana = Metodo_Alimento
+							.calcularIngestaCaloricaMalsana(listaAlimentos);
+					String resultado_consumo_azucar = Metodo_Alimento.calcularConsumoDeAzucar(listaAlimentos);
+					String resultado_consumo_sal = Metodo_Alimento.calcularConsumoDiarioDeSal(listaAlimentos);
 
-				String resultado_ingesta_calorica_malsana = Metodo_Alimento.calcularIngestaCaloricaMalsana(listaAlimentos);
-				String resultado_consumo_azucar = Metodo_Alimento.calcularConsumoDeAzucar(listaAlimentos);
-				String resultado_consumo_sal = Metodo_Alimento.calcularConsumoDiarioDeSal(listaAlimentos);
-
-				textArea.append(resultado_ingesta_calorica_malsana + "\n");
-				textArea.append(resultado_consumo_azucar + "\n");
-				textArea.append(resultado_consumo_sal + "\n");
-
+					textArea.append(resultado_ingesta_calorica_malsana + "\n");
+					textArea.append(resultado_consumo_azucar + "\n");
+					textArea.append(resultado_consumo_sal + "\n");
+				} catch (NumberFormatException ex) {
+					JOptionPane.showMessageDialog(panel, "Error, rellena todos los campos adecuadamente. ", "Warning",
+							JOptionPane.WARNING_MESSAGE);
+				}
 			}
 		});
 		btnValorarDieta.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
@@ -359,20 +357,26 @@ public class TrabajoEntornos extends JPanel {
 		botonadd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					Alimento a1 = new Alimento(añadir_nombre_txt.getText(), Double.parseDouble(añadir_grasas_txt.getText()),
-							Double.parseDouble(añadir_saturadas_txt.getText()), Double.parseDouble(añadir_hidratos_txt.getText()),
-							Double.parseDouble(añadir_azucar_txt.getText()), Double.parseDouble(añadir_proteinas_txt.getText()),
-							Double.parseDouble(añadir_sal_txt.getText()), Double.parseDouble(añadir_calorias_txt.getText()));
+					Alimento a1 = new Alimento(añadir_nombre_txt.getText(),
+							Double.parseDouble(añadir_grasas_txt.getText()),
+							Double.parseDouble(añadir_saturadas_txt.getText()),
+							Double.parseDouble(añadir_hidratos_txt.getText()),
+							Double.parseDouble(añadir_azucar_txt.getText()),
+							Double.parseDouble(añadir_proteinas_txt.getText()),
+							Double.parseDouble(añadir_sal_txt.getText()),
+							Double.parseDouble(añadir_calorias_txt.getText()));
 
-					if (Double.parseDouble(añadir_saturadas_txt.getText()) > Double.parseDouble(añadir_grasas_txt.getText()) || Double
-							.parseDouble(añadir_azucar_txt.getText()) > Double.parseDouble(añadir_hidratos_txt.getText())) {
+					if (Double.parseDouble(añadir_saturadas_txt.getText()) > Double
+							.parseDouble(añadir_grasas_txt.getText())
+							|| Double.parseDouble(añadir_azucar_txt.getText()) > Double
+									.parseDouble(añadir_hidratos_txt.getText())) {
 
 						JOptionPane.showMessageDialog(panel,
 								"No se ha podido a�adir el alimento, corrige los errores por favor ", "Warning",
 								JOptionPane.WARNING_MESSAGE);
 
 					} else {
-						
+
 						a1.calcularCantidadNutrientesTotales(Double.parseDouble(total_alimento_txt.getText()));
 						listaAlimentos.add(a1);
 					}
@@ -388,10 +392,10 @@ public class TrabajoEntornos extends JPanel {
 
 					total_alimento_txt.setText("");
 				} catch (NumberFormatException ex) {
-					JOptionPane.showMessageDialog(panel, "No puede haber campos vacios. ", "Warning",
+					JOptionPane.showMessageDialog(panel, "Error,rellena todos los campos adecuadamente. ", "Warning",
 							JOptionPane.WARNING_MESSAGE);
 				}
-				
+
 			}
 		});
 
